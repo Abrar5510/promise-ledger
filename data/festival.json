@@ -1,0 +1,31 @@
+{
+  "name": "Riverside",
+  "days": [
+    { "date": "2026-12-10", "label": "Thu 10 Dec", "note": "load-in" },
+    { "date": "2026-12-11", "label": "Fri 11 Dec" },
+    { "date": "2026-12-12", "label": "Sat 12 Dec" },
+    { "date": "2026-12-13", "label": "Sun 13 Dec" }
+  ],
+  "staff": [
+    { "name": "Jo Barrett", "role": "Director" },
+    { "name": "Sam Okafor", "role": "Production manager" },
+    { "name": "Priya Nair", "role": "Artist liaison" },
+    { "name": "Dan Whitlock", "role": "Vendor coordinator" },
+    { "name": "Mei Tanaka", "role": "Site and logistics" }
+  ],
+  "parties": [
+    "The Lantern Club", "Marlo Vance", "Kiri & the Tide", "DJ Ostara", "Halfmoon Parade", "Saltbush Choir",
+    "Smoky Joe's BBQ", "Bao Down", "The Fry Guys", "Riverbend Coffee", "Gelato Nonna",
+    "Dumpling Sisters", "Tap & Barrel", "Woodfire Collective", "Green Bowl", "Churro Cart"
+  ],
+  "resources": [
+    { "id": "parking", "name": "Crew parking passes", "kind": "countable", "capacity": 30, "per": "festival", "unit": "passes" },
+    { "id": "outlet-32a", "name": "32A outlets, vendor row", "kind": "countable", "capacity": 12, "per": "festival", "unit": "outlets" },
+    { "id": "buggy", "name": "Site buggies", "kind": "countable", "capacity": 4, "per": "day", "unit": "buggies" },
+    { "id": "guest-list", "name": "Guest list spots", "kind": "countable", "capacity": 40, "per": "day", "unit": "spots" },
+    { "id": "ice", "name": "Ice", "kind": "countable", "capacity": 200, "per": "day", "unit": "bags" },
+    { "id": "green-room-b", "name": "Stage B green room", "kind": "exclusive" },
+    { "id": "gate-2", "name": "Gate 2 load-in bay", "kind": "exclusive" },
+    { "id": "set-length", "name": "Set length", "kind": "term", "unit": "minutes" }
+  ]
+}
