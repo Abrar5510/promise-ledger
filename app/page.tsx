@@ -323,7 +323,7 @@ function Sheet({ title, onClose, children }: { title: string; onClose: () => voi
 }
 
 function SourceSheet({ commitment, source, onClose }: { commitment: Commitment; source: Source; onClose: () => void }) {
-  const at = source.body.indexOf(commitment.quote);
+  const at = source.body.toLowerCase().indexOf(commitment.quote.toLowerCase());
   return (
     <Sheet title={source.subject} onClose={onClose}>
       <p className="text-sm text-muted">
@@ -336,7 +336,9 @@ function SourceSheet({ commitment, source, onClose }: { commitment: Commitment; 
         ) : (
           <>
             {source.body.slice(0, at)}
-            <mark className="rounded-sm bg-mark px-0.5 text-foreground">{commitment.quote}</mark>
+            <mark className="rounded-sm bg-mark px-0.5 text-foreground">
+              {source.body.slice(at, at + commitment.quote.length)}
+            </mark>
             {source.body.slice(at + commitment.quote.length)}
           </>
         )}

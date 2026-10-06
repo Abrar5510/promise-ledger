@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   };
 
   try {
-    const commitments = await extract(source, festival as Festival);
+    const commitments = await extract([source], festival as Festival);
     return Response.json({ source, commitments });
   } catch (error) {
     console.error(error);

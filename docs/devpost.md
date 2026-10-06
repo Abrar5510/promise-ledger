@@ -25,14 +25,14 @@ what physically exists, and puts the ones that can't all be kept at the top.
 
 ## How AI is used
 
-- Claude reads each conversation and returns structured promises. This is the part only a language model
+- Gemini reads each conversation and returns structured promises. This is the part only a language model
   can do: "three passes is fine", "told him Gate 2 is his from 7", and a contract clause are all promises.
 - It tells firm promises from maybes ("I'll check if we can") and uses the final version when a thread
   revises an earlier number.
 - The model does not decide what clashes. Plain code does the counting and the time-overlap checks.
 - Every promise must quote the source word for word. If the quote isn't in the source, the promise is
   discarded.
-- Claude also drafts the fix email for a human to edit and send.
+- Gemini also drafts the fix email for a human to edit and send.
 
 ## Ideas we considered
 
@@ -46,7 +46,7 @@ We chose promises because <your reason>.
 
 ## Tools
 
-Next.js, Tailwind, the Claude API (Opus 5.5) with structured outputs, Vercel, Claude Code.
+Next.js, Tailwind, the Google Gemini API with structured outputs, Vercel, Claude Code.
 
 ## What's next
 

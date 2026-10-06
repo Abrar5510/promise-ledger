@@ -1,4 +1,4 @@
-import { client, FALLBACK, MODEL } from "@/lib/extract";
+import { generate } from "@/lib/extract";
 import type { Commitment } from "@/lib/types";
 
 export async function POST(request: Request) {
@@ -12,20 +12,14 @@ export async function POST(request: Request) {
     .join("\n");
 
   try {
-    const response = await client.beta.messages.create({
-      model: MODEL,
-      max_tokens: 4000,
-      ...FALLBACK,
-      output_config: { effort: "low" },
-      system:
+    const draft = await generate(`Clash: ${headline.slice(0, 300)}\n\nPromises involved:\n${lines}`, {
+      systemInstruction:
         "You help Fieldday Events, a five-person festival company, fix promises that clash. " +
         "Given a clash and the promises behind it, suggest the least painful fix in one or two sentences, " +
         "then draft the one email that does the most to resolve it. Start the draft with To: and Subject: lines. " +
         "Be warm, direct and specific about what changes and what is offered instead. " +
         "Plain text only, no markdown. Sign off as the staff member who should send it.",
-      messages: [{ role: "user", content: `Clash: ${headline.slice(0, 300)}\n\nPromises involved:\n${lines}` }],
     });
-    const draft = response.content.flatMap((b) => (b.type === "text" ? [b.text] : [])).join("");
     return Response.json({ draft });
   } catch (error) {
     console.error(error);

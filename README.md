@@ -9,13 +9,13 @@ reads those conversations, lists every promise Fieldday made, and flags the ones
 
 ```bash
 npm install
-cp .env.example .env.local   # then add your Anthropic API key
+cp .env.example .env.local   # then add your Google Gemini API key
 npm run dev
 ```
 
 ## How it works
 
-- `lib/extract.ts` sends one conversation to Claude and gets back structured promises. Each one carries a
+- `lib/extract.ts` sends one conversation to Gemini and gets back structured promises. Each one carries a
   verbatim quote, and any promise whose quote is not in the source is thrown away.
 - `lib/clashes.ts` decides what clashes. Plain code, no AI: sums against capacity, time overlaps,
   contradicting terms, and promises nobody owns.

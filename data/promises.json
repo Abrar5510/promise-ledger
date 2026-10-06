@@ -1,8 +1,7 @@
 [
   {
-    "id": "s01-p1",
     "sourceId": "s01",
-    "quote": "Six crew parking passes for the weekend is no problem",
+    "quote": "Six crew parking passes for the weekend is no problem.",
     "madeBy": "Sam Okafor",
     "madeTo": "The Lantern Club",
     "resourceId": "parking",
@@ -10,13 +9,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "6 parking passes for the weekend",
-    "status": "firm"
+    "summary": "6 crew parking passes for the weekend",
+    "status": "firm",
+    "id": "s01-p1"
   },
   {
-    "id": "s01-p2",
     "sourceId": "s01",
-    "quote": "We can also do 10 guest list spots for Saturday",
+    "quote": "We can also do 10 guest list spots for Saturday.",
     "madeBy": "Sam Okafor",
     "madeTo": "The Lantern Club",
     "resourceId": "guest-list",
@@ -24,13 +23,13 @@
     "day": "2026-12-12",
     "start": null,
     "end": null,
-    "summary": "10 guest list spots on Saturday",
-    "status": "firm"
+    "summary": "10 guest list spots for Saturday",
+    "status": "firm",
+    "id": "s01-p2"
   },
   {
-    "id": "s02-p1",
     "sourceId": "s02",
-    "quote": "4 parking passes for Marlo's party",
+    "quote": "Confirming what we agreed on the phone: 4 parking passes for Marlo's party",
     "madeBy": "Priya Nair",
     "madeTo": "Marlo Vance",
     "resourceId": "parking",
@@ -39,10 +38,10 @@
     "start": null,
     "end": null,
     "summary": "4 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s02-p1"
   },
   {
-    "id": "s02-p2",
     "sourceId": "s02",
     "quote": "the Stage B green room is yours from 5:30pm to 7pm on Saturday",
     "madeBy": "Priya Nair",
@@ -52,13 +51,13 @@
     "day": "2026-12-12",
     "start": "17:30",
     "end": "19:00",
-    "summary": "Stage B green room, Saturday 5:30pm to 7pm",
-    "status": "firm"
+    "summary": "Stage B green room Saturday 5:30pm to 7pm",
+    "status": "firm",
+    "id": "s02-p2"
   },
   {
-    "id": "s02-p3",
     "sourceId": "s02",
-    "quote": "I've also put you down for 6 guests on Saturday",
+    "quote": "I've also put you down for 6 guests on Saturday.",
     "madeBy": "Priya Nair",
     "madeTo": "Marlo Vance",
     "resourceId": "guest-list",
@@ -67,12 +66,12 @@
     "start": null,
     "end": null,
     "summary": "6 guest list spots on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s02-p3"
   },
   {
-    "id": "s03-p1",
     "sourceId": "s03",
-    "quote": "Five parking passes are sorted for the band and crew",
+    "quote": "Five parking passes are sorted for the band and crew.",
     "madeBy": "Priya Nair",
     "madeTo": "Kiri & the Tide",
     "resourceId": "parking",
@@ -81,10 +80,10 @@
     "start": null,
     "end": null,
     "summary": "5 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s03-p1"
   },
   {
-    "id": "s03-p2",
     "sourceId": "s03",
     "quote": "you can have a 75 minute set on Sunday",
     "madeBy": "Priya Nair",
@@ -95,12 +94,12 @@
     "start": null,
     "end": null,
     "summary": "75 minute set on Sunday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s03-p2"
   },
   {
-    "id": "s03-p3",
     "sourceId": "s03",
-    "quote": "Eight guest list spots for Sunday are yours too",
+    "quote": "Eight guest list spots for Sunday are yours too.",
     "madeBy": "Priya Nair",
     "madeTo": "Kiri & the Tide",
     "resourceId": "guest-list",
@@ -108,13 +107,13 @@
     "day": "2026-12-13",
     "start": null,
     "end": null,
-    "summary": "8 guest list spots on Sunday",
-    "status": "firm"
+    "summary": "8 guest list spots for Sunday",
+    "status": "firm",
+    "id": "s03-p3"
   },
   {
-    "id": "s04-p1",
     "sourceId": "s04",
-    "quote": "The Promoter will provide the Artist a performance slot of 60 minutes",
+    "quote": "3.1 The Promoter will provide the Artist a performance slot of 60 minutes, inclusive of changeover.",
     "madeBy": "Sam Okafor",
     "madeTo": "Kiri & the Tide",
     "resourceId": "set-length",
@@ -122,13 +121,13 @@
     "day": "2026-12-13",
     "start": null,
     "end": null,
-    "summary": "60 minute set on Sunday (contract)",
-    "status": "firm"
+    "summary": "60 minute set slot",
+    "status": "firm",
+    "id": "s04-p1"
   },
   {
-    "id": "s05-p1",
     "sourceId": "s05",
-    "quote": "You've got three parking passes",
+    "quote": "You've got three parking passes for the ute, the trailer tow and the cool van.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Smoky Joe's BBQ",
     "resourceId": "parking",
@@ -137,12 +136,12 @@
     "start": null,
     "end": null,
     "summary": "3 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s05-p1"
   },
   {
-    "id": "s05-p2",
     "sourceId": "s05",
-    "quote": "I've allocated you two 32A outlets on vendor row",
+    "quote": "I've allocated you two 32A outlets on vendor row for the smokers and the cold room.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Smoky Joe's BBQ",
     "resourceId": "outlet-32a",
@@ -150,13 +149,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "2 x 32A outlets",
-    "status": "firm"
+    "summary": "2 32A outlets on vendor row",
+    "status": "firm",
+    "id": "s05-p2"
   },
   {
-    "id": "s05-p3",
     "sourceId": "s05",
-    "quote": "you're booked into Gate 2 from 7:30am to 8:30am",
+    "quote": "Load-in is Thursday 10 December, you're booked into Gate 2 from 7:30am to 8:30am.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Smoky Joe's BBQ",
     "resourceId": "gate-2",
@@ -164,13 +163,13 @@
     "day": "2026-12-10",
     "start": "07:30",
     "end": "08:30",
-    "summary": "Gate 2 load-in, Thursday 7:30am to 8:30am",
-    "status": "firm"
+    "summary": "Gate 2 load-in Thursday 7:30am to 8:30am",
+    "status": "firm",
+    "id": "s05-p3"
   },
   {
-    "id": "s05-p4",
     "sourceId": "s05",
-    "quote": "I'll also have 30 bags of ice set aside for you on Saturday",
+    "quote": "I'll also have 30 bags of ice set aside for you on Saturday.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Smoky Joe's BBQ",
     "resourceId": "ice",
@@ -179,12 +178,12 @@
     "start": null,
     "end": null,
     "summary": "30 bags of ice on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s05-p4"
   },
   {
-    "id": "s06-p1",
     "sourceId": "s06",
-    "quote": "you have two parking passes",
+    "quote": "all approved: you have two parking passes and two 32A outlets for the fryers.",
     "madeBy": "Dan Whitlock",
     "madeTo": "The Fry Guys",
     "resourceId": "parking",
@@ -193,12 +192,12 @@
     "start": null,
     "end": null,
     "summary": "2 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s06-p1"
   },
   {
-    "id": "s06-p2",
     "sourceId": "s06",
-    "quote": "two 32A outlets for the fryers",
+    "quote": "all approved: you have two parking passes and two 32A outlets for the fryers.",
     "madeBy": "Dan Whitlock",
     "madeTo": "The Fry Guys",
     "resourceId": "outlet-32a",
@@ -206,13 +205,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "2 x 32A outlets",
-    "status": "firm"
+    "summary": "2 32A outlets",
+    "status": "firm",
+    "id": "s06-p2"
   },
   {
-    "id": "s07-p1",
     "sourceId": "s07",
-    "quote": "Told him four parking passes is fine",
+    "quote": "Told him four parking passes is fine.",
     "madeBy": "Mei Tanaka",
     "madeTo": "Tap & Barrel",
     "resourceId": "parking",
@@ -221,10 +220,10 @@
     "start": null,
     "end": null,
     "summary": "4 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s07-p1"
   },
   {
-    "id": "s07-p2",
     "sourceId": "s07",
     "quote": "told him Gate 2 is his from 7am to 8am Thursday 10 Dec",
     "madeBy": "Mei Tanaka",
@@ -234,13 +233,13 @@
     "day": "2026-12-10",
     "start": "07:00",
     "end": "08:00",
-    "summary": "Gate 2 load-in, Thursday 7am to 8am",
-    "status": "firm"
+    "summary": "Gate 2 load-in Thursday 7am to 8am",
+    "status": "firm",
+    "id": "s07-p2"
   },
   {
-    "id": "s08-p1",
     "sourceId": "s08",
-    "quote": "Two 32A outlets for the glycol chillers are locked in",
+    "quote": "Two 32A outlets for the glycol chillers are locked in.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Tap & Barrel",
     "resourceId": "outlet-32a",
@@ -248,13 +247,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "2 x 32A outlets",
-    "status": "firm"
+    "summary": "2 32A outlets for glycol chillers",
+    "status": "firm",
+    "id": "s08-p1"
   },
   {
-    "id": "s08-p2",
     "sourceId": "s08",
-    "quote": "we'll supply 60 bags each day of the festival",
+    "quote": "On ice, we'll supply 60 bags each day of the festival.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Tap & Barrel",
     "resourceId": "ice",
@@ -262,13 +261,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "60 bags of ice every day",
-    "status": "firm"
+    "summary": "60 bags of ice each day",
+    "status": "firm",
+    "id": "s08-p2"
   },
   {
-    "id": "s09-p1",
     "sourceId": "s09",
-    "quote": "Three parking passes approved",
+    "quote": "Three parking passes approved.",
     "madeBy": "Mei Tanaka",
     "madeTo": "Woodfire Collective",
     "resourceId": "parking",
@@ -277,12 +276,12 @@
     "start": null,
     "end": null,
     "summary": "3 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s09-p1"
   },
   {
-    "id": "s09-p2",
     "sourceId": "s09",
-    "quote": "Gate 2 load-in is yours 9am to 10am on Thursday 10 December",
+    "quote": "Gate 2 load-in is yours 9am to 10am on Thursday 10 December.",
     "madeBy": "Mei Tanaka",
     "madeTo": "Woodfire Collective",
     "resourceId": "gate-2",
@@ -290,13 +289,13 @@
     "day": "2026-12-10",
     "start": "09:00",
     "end": "10:00",
-    "summary": "Gate 2 load-in, Thursday 9am to 10am",
-    "status": "firm"
+    "summary": "Gate 2 load-in Thursday 9am to 10am",
+    "status": "firm",
+    "id": "s09-p2"
   },
   {
-    "id": "s10-p1",
     "sourceId": "s10",
-    "quote": "two 32A outlets for the dough mixer and the fridge trailer, done",
+    "quote": "Carla, yes, two 32A outlets for the dough mixer and the fridge trailer, done.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Woodfire Collective",
     "resourceId": "outlet-32a",
@@ -304,13 +303,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "2 x 32A outlets",
-    "status": "firm"
+    "summary": "2 32A outlets",
+    "status": "firm",
+    "id": "s10-p1"
   },
   {
-    "id": "s11-p1",
     "sourceId": "s11",
-    "quote": "Five parking passes for the band bus and crew cars",
+    "quote": "Five parking passes for the band bus and crew cars.",
     "madeBy": "Sam Okafor",
     "madeTo": "Halfmoon Parade",
     "resourceId": "parking",
@@ -319,12 +318,12 @@
     "start": null,
     "end": null,
     "summary": "5 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s11-p1"
   },
   {
-    "id": "s11-p2",
     "sourceId": "s11",
-    "quote": "You'll have the Stage B green room from 6pm until 7:30pm on Saturday",
+    "quote": "You'll have the Stage B green room from 6pm until 7:30pm on Saturday before your 8pm set.",
     "madeBy": "Sam Okafor",
     "madeTo": "Halfmoon Parade",
     "resourceId": "green-room-b",
@@ -332,13 +331,13 @@
     "day": "2026-12-12",
     "start": "18:00",
     "end": "19:30",
-    "summary": "Stage B green room, Saturday 6pm to 7:30pm",
-    "status": "firm"
+    "summary": "Stage B green room Saturday 6pm to 7:30pm",
+    "status": "firm",
+    "id": "s11-p2"
   },
   {
-    "id": "s11-p3",
     "sourceId": "s11",
-    "quote": "Eight on the guest list for Saturday",
+    "quote": "Eight on the guest list for Saturday.",
     "madeBy": "Sam Okafor",
     "madeTo": "Halfmoon Parade",
     "resourceId": "guest-list",
@@ -347,12 +346,12 @@
     "start": null,
     "end": null,
     "summary": "8 guest list spots on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s11-p3"
   },
   {
-    "id": "s12-p1",
     "sourceId": "s12",
-    "quote": "Three parking passes, done",
+    "quote": "Three parking passes, done, don't stress about it.",
     "madeBy": "Jo Barrett",
     "madeTo": "DJ Ostara",
     "resourceId": "parking",
@@ -361,12 +360,12 @@
     "start": null,
     "end": null,
     "summary": "3 parking passes",
-    "status": "firm"
+    "status": "firm",
+    "id": "s12-p1"
   },
   {
-    "id": "s13-p1",
     "sourceId": "s13",
-    "quote": "let's make it six parking passes then",
+    "quote": "Perfect, let's make it six parking passes then, and I'll release the other two.",
     "madeBy": "Priya Nair",
     "madeTo": "Saltbush Choir",
     "resourceId": "parking",
@@ -374,13 +373,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "6 parking passes (revised down from 8)",
-    "status": "firm"
+    "summary": "6 parking passes",
+    "status": "firm",
+    "id": "s13-p1"
   },
   {
-    "id": "s14-p1",
     "sourceId": "s14",
-    "quote": "Promised two buggies on Saturday",
+    "quote": "Promised two buggies on Saturday to shuttle them.",
     "madeBy": "Mei Tanaka",
     "madeTo": "Saltbush Choir",
     "resourceId": "buggy",
@@ -389,12 +388,12 @@
     "start": null,
     "end": null,
     "summary": "2 buggies on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s14-p1"
   },
   {
-    "id": "s15-p1",
     "sourceId": "s15",
-    "quote": "One buggy is reserved for the band on Saturday",
+    "quote": "One buggy is reserved for the band on Saturday for the run between the hotel drop-off and Stage A.",
     "madeBy": "Priya Nair",
     "madeTo": "The Lantern Club",
     "resourceId": "buggy",
@@ -403,12 +402,12 @@
     "start": null,
     "end": null,
     "summary": "1 buggy on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s15-p1"
   },
   {
-    "id": "s16-p1",
     "sourceId": "s16",
-    "quote": "Marlo can have a buggy on Saturday",
+    "quote": "Yes, Marlo can have a buggy on Saturday, I've booked one.",
     "madeBy": "Priya Nair",
     "madeTo": "Marlo Vance",
     "resourceId": "buggy",
@@ -417,12 +416,12 @@
     "start": null,
     "end": null,
     "summary": "1 buggy on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s16-p1"
   },
   {
-    "id": "s17-p1",
     "sourceId": "s17",
-    "quote": "we'll sort a vegan caterer for your crew for all three days",
+    "quote": "we'll sort a vegan caterer for your crew for all three days.",
     "madeBy": "Jo Barrett",
     "madeTo": "The Lantern Club",
     "resourceId": null,
@@ -430,13 +429,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "a vegan caterer for The Lantern Club's crew, all three days",
-    "status": "firm"
+    "summary": "Vegan catering for crew for all 3 days",
+    "status": "firm",
+    "id": "s17-p1"
   },
   {
-    "id": "s18-p1",
     "sourceId": "s18",
-    "quote": "One 32A outlet is confirmed for your steamers",
+    "quote": "One 32A outlet is confirmed for your steamers.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Bao Down",
     "resourceId": "outlet-32a",
@@ -444,13 +443,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "1 x 32A outlet",
-    "status": "firm"
+    "summary": "1 32A outlet",
+    "status": "firm",
+    "id": "s18-p1"
   },
   {
-    "id": "s18-p2",
     "sourceId": "s18",
-    "quote": "I'll check whether we can get you a pass",
+    "quote": "On parking, I'll check whether we can get you a pass, the lot is tight. No promises yet.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Bao Down",
     "resourceId": "parking",
@@ -458,13 +457,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "maybe 1 parking pass, not confirmed",
-    "status": "tentative"
+    "summary": "Parking pass check",
+    "status": "tentative",
+    "id": "s18-p2"
   },
   {
-    "id": "s19-p1",
     "sourceId": "s19",
-    "quote": "You're confirmed for one 32A outlet",
+    "quote": "You're confirmed for one 32A outlet.",
     "madeBy": "Dan Whitlock",
     "madeTo": "Dumpling Sisters",
     "resourceId": "outlet-32a",
@@ -472,11 +471,11 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "1 x 32A outlet",
-    "status": "firm"
+    "summary": "1 32A outlet",
+    "status": "firm",
+    "id": "s19-p1"
   },
   {
-    "id": "s20-p1",
     "sourceId": "s20",
     "quote": "Riverbend Coffee gets one 32A outlet for the espresso machines",
     "madeBy": "Mei Tanaka",
@@ -486,13 +485,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "1 x 32A outlet",
-    "status": "firm"
+    "summary": "1 32A outlet for Riverbend Coffee",
+    "status": "firm",
+    "id": "s20-p1"
   },
   {
-    "id": "s20-p2",
     "sourceId": "s20",
-    "quote": "Churro Cart gets one 32A outlet for the fryer",
+    "quote": "Churro Cart gets one 32A outlet for the fryer.",
     "madeBy": "Mei Tanaka",
     "madeTo": "Churro Cart",
     "resourceId": "outlet-32a",
@@ -500,13 +499,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "1 x 32A outlet",
-    "status": "firm"
+    "summary": "1 32A outlet for Churro Cart",
+    "status": "firm",
+    "id": "s20-p2"
   },
   {
-    "id": "s21-p1",
     "sourceId": "s21",
-    "quote": "I've put you down for two 32A outlets",
+    "quote": "The freezers are covered, I've put you down for two 32A outlets.",
     "madeBy": "Sam Okafor",
     "madeTo": "Gelato Nonna",
     "resourceId": "outlet-32a",
@@ -514,13 +513,13 @@
     "day": null,
     "start": null,
     "end": null,
-    "summary": "2 x 32A outlets",
-    "status": "firm"
+    "summary": "2 32A outlets",
+    "status": "firm",
+    "id": "s21-p1"
   },
   {
-    "id": "s21-p2",
     "sourceId": "s21",
-    "quote": "20 bags of ice on Saturday for the display",
+    "quote": "And 20 bags of ice on Saturday for the display.",
     "madeBy": "Sam Okafor",
     "madeTo": "Gelato Nonna",
     "resourceId": "ice",
@@ -529,12 +528,12 @@
     "start": null,
     "end": null,
     "summary": "20 bags of ice on Saturday",
-    "status": "firm"
+    "status": "firm",
+    "id": "s21-p2"
   },
   {
-    "id": "s22-p1",
     "sourceId": "s22",
-    "quote": "I might be able to get you the Stage B green room after 9pm on Saturday",
+    "quote": "I might be able to get you the Stage B green room after 9pm on Saturday but I need to confirm with Sam first.",
     "madeBy": "Priya Nair",
     "madeTo": "DJ Ostara",
     "resourceId": "green-room-b",
@@ -542,7 +541,8 @@
     "day": "2026-12-12",
     "start": "21:00",
     "end": null,
-    "summary": "maybe Stage B green room after 9pm Saturday, not confirmed",
-    "status": "tentative"
+    "summary": "Stage B green room after 9pm Saturday",
+    "status": "tentative",
+    "id": "s22-p1"
   }
 ]
