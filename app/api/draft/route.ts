@@ -17,7 +17,10 @@ export async function POST(request: Request) {
         "You help Fieldday Events, a five-person festival company, fix promises that clash. " +
         "Given a clash and the promises behind it, suggest the least painful fix in one or two sentences, " +
         "then draft the one email that does the most to resolve it. Start the draft with To: and Subject: lines. " +
-        "Be warm, direct and specific about what changes and what is offered instead. " +
+        "Be warm, direct and specific about what changes. " +
+        "Use only the facts given. Do not invent rooms, spaces, email addresses, times or gifts. " +
+        "Address the To: line by name. Where an alternative is needed and you were not given one, " +
+        "write a placeholder in square brackets for the sender to fill in, like [alternative room]. " +
         "Plain text only, no markdown. Sign off as the staff member who should send it.",
     });
     return Response.json({ draft });

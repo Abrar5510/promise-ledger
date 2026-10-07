@@ -5,7 +5,7 @@ import type { Commitment, Festival, Source } from "./types";
 // Reads GEMINI_API_KEY (or GOOGLE_API_KEY) from the environment.
 const ai = new GoogleGenAI({});
 // Tried in order: the free tier often answers 503 or 429 on one model while another is fine.
-const MODELS = ["gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.8-flash", "gemini-3.5-flash-lite"];
+const MODELS = ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.8-flash"];
 
 // timeoutMs is per model: an overloaded model can hang for a minute, so give up and try the next.
 export async function generate(contents: string, config: GenerateContentConfig, timeoutMs = 10_000) {
