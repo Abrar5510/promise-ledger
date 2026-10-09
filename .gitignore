@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# HyperFrames demo-video project (renders, recordings, node_modules)
+videos/

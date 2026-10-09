@@ -52,3 +52,10 @@ Next.js, Tailwind, the Google Gemini API with structured outputs, Vercel, Claude
 
 Connect it to the team's real inboxes, and let a change (a delayed headliner, a lost car park) show which
 promises it breaks.
+
+## Image gallery
+
+| | |
+|---|---|
+| ![Clashes and capacity](screenshots/01-ledger.png) | ![Every promise, filterable by staff member](screenshots/02-every-promise.png) |
+| The ledger: 39 promises, 6 clashes, capacity bars | Every promise, filterable by who made it |
