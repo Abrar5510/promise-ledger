@@ -1,0 +1,243 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    /* Root: styled by #root, never a class (subcomposition_root_styled_by_class). */
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    /* Track 0 — full-bleed ground, its own clip layer (never painted on #root). */
+    .f03-capacity-ground {
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+    }
+
+    /* Track 2 — the designed layer: sits above the hoisted full-bleed recording. */
+    .f03-capacity-chrome {
+      position: absolute;
+      inset: 0;
+      z-index: 30;
+      pointer-events: none;
+      font-family: Geist, Inter, ui-sans-serif, system-ui, sans-serif;
+      font-weight: 400;
+      color: #18181b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Left margin — chapter label over its hairline (frame.md label). */
+    .f03-capacity-label {
+      position: absolute;
+      left: 96px;
+      top: 88px;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
+      color: #c2281d;
+      white-space: nowrap;
+    }
+
+    .f03-capacity-lead-rule {
+      position: absolute;
+      left: 96px;
+      top: 128px;
+      width: 300px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: 0 50%;
+    }
+
+    /* Drafting guide down the empty left band (frame.md vertical-line). */
+    .f03-capacity-guide {
+      position: absolute;
+      left: 96px;
+      top: 178px;
+      width: 1px;
+      height: 638px;
+      background: #e4e4e7;
+      opacity: 0.38;
+      transform-origin: 50% 0;
+    }
+
+    /* Right margin — stats cluster on hairlines (frame.md stats-cluster). */
+    .f03-capacity-stat-rule {
+      position: absolute;
+      left: 1492px;
+      width: 332px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: 0 50%;
+    }
+
+    .f03-capacity-stat-rule-41 {
+      top: 316px;
+    }
+
+    .f03-capacity-stat-rule-30 {
+      top: 434px;
+    }
+
+    .f03-capacity-stat {
+      position: absolute;
+      left: 1492px;
+      width: 332px;
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+    }
+
+    .f03-capacity-stat-41 {
+      top: 336px;
+    }
+
+    .f03-capacity-stat-30 {
+      top: 454px;
+    }
+
+    .f03-capacity-figure {
+      font-size: 58px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #18181b;
+    }
+
+    .f03-capacity-figure-over {
+      color: #c2281d;
+    }
+
+    .f03-capacity-tag {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #5f5f68;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="03-capacity"
+    data-duration="12.5"
+    data-width="1920"
+    data-height="1080"
+  >
+    <div
+      class="clip f03-capacity-ground"
+      id="f03-capacity-ground"
+      data-start="0"
+      data-duration="12.5"
+      data-track-index="0"
+    ></div>
+
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <div
+      class="clip f03-capacity-chrome"
+      id="f03-capacity-chrome"
+      data-start="0"
+      data-duration="12.5"
+      data-track-index="2"
+    >
+      <p class="f03-capacity-label">Capacity</p>
+      <div class="f03-capacity-lead-rule"></div>
+      <div class="f03-capacity-guide"></div>
+
+      <div class="f03-capacity-stat-rule f03-capacity-stat-rule-41"></div>
+      <div class="f03-capacity-stat f03-capacity-stat-41">
+        <span class="f03-capacity-figure f03-capacity-figure-over">41</span>
+        <span class="f03-capacity-tag">Promised</span>
+      </div>
+
+      <div class="f03-capacity-stat-rule f03-capacity-stat-rule-30"></div>
+      <div class="f03-capacity-stat f03-capacity-stat-30">
+        <span class="f03-capacity-figure">30</span>
+        <span class="f03-capacity-tag">Exist</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      var tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0.0-4.0s) — the recording is the focal; the margin label seats under it.
+      tl.fromTo(
+        ".f03-capacity-label",
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+        0.35
+      );
+      tl.fromTo(
+        ".f03-capacity-lead-rule",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.9, ease: "power3.out" },
+        0.55
+      );
+
+      // Scene 2 (4.0-9.3s) — the row expands; the drafting guide draws down the margin.
+      tl.fromTo(
+        ".f03-capacity-guide",
+        { scaleY: 0 },
+        { scaleY: 1, duration: 1.2, ease: "power3.out" },
+        4.2
+      );
+
+      // "41 passes" lands — the over-capacity figure takes accent red.
+      tl.fromTo(
+        ".f03-capacity-stat-rule-41",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.7, ease: "power3.out" },
+        6.7
+      );
+      tl.fromTo(
+        ".f03-capacity-stat-41",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" },
+        6.9
+      );
+
+      // "a 30-space lot" lands — the lot that exists.
+      tl.fromTo(
+        ".f03-capacity-stat-rule-30",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.7, ease: "power3.out" },
+        8.2
+      );
+      tl.fromTo(
+        ".f03-capacity-stat-30",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" },
+        8.4
+      );
+
+      // Scene 3 (9.3-12.5s) — hold the expanded read still; the timeline keeps its full length.
+      tl.to({ hold: 0 }, { hold: 1, duration: 12.5, ease: "none" }, 0);
+
+      window.__timelines["03-capacity"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,58 @@
+{
+  "provider": "kokoro",
+  "speed": "1.0",
+  "lines": [
+    {
+      "id": "01",
+      "text": "Fieldday is five people running a 15,000-a-day festival. For ten weeks they say yes: in emails, on calls, in contracts. Nobody writes those promises down in one place."
+    },
+    {
+      "id": "02",
+      "text": "We gave it 25 real-looking conversations. It found 39 promises. Six of them can't all be kept."
+    },
+    {
+      "id": "03",
+      "text": "Five different people each handed out a few parking passes. Every one was reasonable. Together it's 41 passes for a 30-space lot."
+    },
+    {
+      "id": "04",
+      "text": "Every promise links back to the exact sentence it came from, so you never have to trust the AI's word for it."
+    },
+    {
+      "id": "05",
+      "text": "Priya gave Marlo Vance the green room from 5:30. Sam gave Halfmoon Parade the same room from 6. Neither knew."
+    },
+    {
+      "id": "06",
+      "text": "The contract says 60 minutes. A friendly email a week later says 75. The artist will hold us to the email."
+    },
+    {
+      "id": "07",
+      "text": "And this one: \"we'll sort a vegan caterer.\" Promised by the director, owned by nobody."
+    },
+    {
+      "id": "08",
+      "text": "Now a new email comes in. Mei promises a buggy for Saturday. All four buggies were already promised."
+    },
+    {
+      "id": "09",
+      "text": "The ledger catches it the moment it's said, not on show day."
+    },
+    {
+      "id": "10",
+      "text": "It drafts the awkward email for you. It never sends anything."
+    },
+    {
+      "id": "11",
+      "text": "How it works: the AI only reads and extracts. Plain code does the counting and decides what clashes, so a hallucination can't invent a problem or hide one."
+    },
+    {
+      "id": "12",
+      "text": "The Promise Ledger. Know what you've said yes to."
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  },
+  "voice": "am_michael"
+}

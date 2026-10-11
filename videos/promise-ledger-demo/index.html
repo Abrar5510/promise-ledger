@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+    <style>
+      @font-face {
+        font-family: "Geist";
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: block;
+        src: url("assets/fonts/geist-latin.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+          U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Geist";
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: block;
+        src: url("assets/fonts/geist-latin-ext.woff2") format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+          U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Geist Mono";
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: block;
+        src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #FAFAFA;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="125"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div
+        id="el-01-title-card"
+        class="scene"
+        data-composition-id="01-title-card"
+        data-composition-src="compositions/frames/01-title-card.html"
+        data-start="0"
+        data-duration="18"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-01-title-card-voice"
+        src="assets/voice/01.wav"
+        data-start="0"
+        data-duration="17.5"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-02-reveal"
+        class="scene"
+        data-composition-id="02-reveal"
+        data-composition-src="compositions/frames/02-reveal.html"
+        data-start="17.5"
+        data-duration="10"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-02-reveal-voice"
+        src="assets/voice/02.wav"
+        data-start="17.5"
+        data-duration="10"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-03-capacity"
+        class="scene"
+        data-composition-id="03-capacity"
+        data-composition-src="compositions/frames/03-capacity.html"
+        data-start="27.5"
+        data-duration="12.5"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-03-capacity-voice"
+        src="assets/voice/03.wav"
+        data-start="27.5"
+        data-duration="12.5"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-04-provenance"
+        class="scene"
+        data-composition-id="04-provenance"
+        data-composition-src="compositions/frames/04-provenance.html"
+        data-start="40"
+        data-duration="9"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-04-provenance-voice"
+        src="assets/voice/04.wav"
+        data-start="40"
+        data-duration="9"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-05-green-room"
+        class="scene"
+        data-composition-id="05-green-room"
+        data-composition-src="compositions/frames/05-green-room.html"
+        data-start="49"
+        data-duration="11"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-05-green-room-voice"
+        src="assets/voice/05.wav"
+        data-start="49"
+        data-duration="11"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-06-set-length"
+        class="scene"
+        data-composition-id="06-set-length"
+        data-composition-src="compositions/frames/06-set-length.html"
+        data-start="60"
+        data-duration="11"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-06-set-length-voice"
+        src="assets/voice/06.wav"
+        data-start="60"
+        data-duration="11"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-07-orphan"
+        class="scene"
+        data-composition-id="07-orphan"
+        data-composition-src="compositions/frames/07-orphan.html"
+        data-start="71"
+        data-duration="7.9"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-07-orphan-voice"
+        src="assets/voice/07.wav"
+        data-start="71"
+        data-duration="7.5"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-08-paste"
+        class="scene"
+        data-composition-id="08-paste"
+        data-composition-src="compositions/frames/08-paste.html"
+        data-start="78.5"
+        data-duration="10.5"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-08-paste-voice"
+        src="assets/voice/08.wav"
+        data-start="78.5"
+        data-duration="10.5"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-09-catch"
+        class="scene"
+        data-composition-id="09-catch"
+        data-composition-src="compositions/frames/09-catch.html"
+        data-start="89"
+        data-duration="6"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-09-catch-voice"
+        src="assets/voice/09.wav"
+        data-start="89"
+        data-duration="6"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-10-draft"
+        class="scene"
+        data-composition-id="10-draft"
+        data-composition-src="compositions/frames/10-draft.html"
+        data-start="95"
+        data-duration="8"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-10-draft-voice"
+        src="assets/voice/10.wav"
+        data-start="95"
+        data-duration="8"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-11-mechanism"
+        class="scene"
+        data-composition-id="11-mechanism"
+        data-composition-src="compositions/frames/11-mechanism.html"
+        data-start="103"
+        data-duration="15.5"
+        data-track-index="0"
+      ></div>
+      <audio
+        id="el-11-mechanism-voice"
+        src="assets/voice/11.wav"
+        data-start="103"
+        data-duration="15"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <div
+        id="el-12-signoff"
+        class="scene"
+        data-composition-id="12-signoff"
+        data-composition-src="compositions/frames/12-signoff.html"
+        data-start="118"
+        data-duration="7"
+        data-track-index="1"
+      ></div>
+      <audio
+        id="el-12-signoff-voice"
+        src="assets/voice/12.wav"
+        data-start="118"
+        data-duration="7"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <video id="el-02-reveal-video-1" src="assets/beat-02-reveal.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="17.5"
+        data-duration="10"
+        data-track-index="2000"
+      ></video>
+
+      <video id="el-03-capacity-video-2" src="assets/beat-03-capacity.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="27.5"
+        data-duration="12.5"
+        data-track-index="3000"
+      ></video>
+
+      <video id="el-04-provenance-video-3" src="assets/beat-04-provenance.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="40"
+        data-duration="9"
+        data-track-index="4000"
+      ></video>
+
+      <video id="el-05-green-room-video-4" src="assets/beat-05-green-room.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="49"
+        data-duration="11"
+        data-track-index="5000"
+      ></video>
+
+      <video id="el-06-set-length-video-5" src="assets/beat-06-set-length.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="60"
+        data-duration="11"
+        data-track-index="6000"
+      ></video>
+
+      <video id="el-07-orphan-video-6" src="assets/beat-07-orphan.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="71"
+        data-duration="7.5"
+        data-track-index="7000"
+      ></video>
+
+      <video id="el-08-paste-video-7" src="assets/beat-08-paste.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="78.5"
+        data-duration="10.5"
+        data-track-index="8000"
+      ></video>
+
+      <video id="el-09-catch-video-8" src="assets/beat-09-catch.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="89"
+        data-duration="6"
+        data-track-index="9000"
+      ></video>
+
+      <video id="el-10-draft-video-9" src="assets/beat-10-draft.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="95"
+        data-duration="8"
+        data-track-index="10000"
+      ></video>
+
+      <video id="el-11-mechanism-video-10" src="assets/beat-11-mechanism.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="103"
+        data-duration="15"
+        data-track-index="11000"
+      ></video>
+
+      <video id="el-12-signoff-video-11" src="assets/beat-12-top.mp4" muted playsinline
+        class="clip"
+        style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover"
+        data-start="118"
+        data-duration="7"
+        data-track-index="12000"
+      ></video>
+
+      <!-- captions -->
+      <div
+        id="el-captions"
+        class="scene"
+        data-composition-id="captions"
+        data-composition-src="compositions/captions.html"
+        data-start="0"
+        data-duration="125"
+        data-track-index="2"
+      ></div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      // ── frame transitions (injected by transitions.mjs) ──
+      (function () { var tl = window.__timelines["main"];
+        tl.to("#el-01-title-card", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 17.5);
+        tl.fromTo("#el-02-reveal", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 17.5);
+        tl.to("#el-07-orphan", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 78.5);
+        tl.fromTo("#el-08-paste", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 78.5);
+        tl.to("#el-11-mechanism", { opacity: 0, duration: 0.5, ease: "power2.inOut" }, 118);
+        tl.fromTo("#el-12-signoff", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 118);
+        tl.to({}, { duration: 125 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+      })();
+    </script>
+  </body>
+</html>

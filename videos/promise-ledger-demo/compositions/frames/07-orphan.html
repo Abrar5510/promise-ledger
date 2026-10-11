@@ -1,0 +1,218 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      container-type: size;
+      font-family: Geist, system-ui, sans-serif;
+      color: #18181b;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    /* full-bleed ground — its own clip layer, never painted on #root */
+    [id="07-orphan-ground"] {
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+    }
+
+    /* the recording is the subject: exact host box, undimmed */
+    [id="07-orphan-video"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      object-fit: cover;
+      background: #fafafa;
+    }
+
+    [id="07-orphan-overlay"] {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* drafting-paper alignment guide, left margin */
+    [id="07-orphan-vline"] {
+      position: absolute;
+      left: 96px;
+      top: 40px;
+      width: 1px;
+      height: 840px;
+      background: #e4e4e7;
+      opacity: 0.35;
+      transform-origin: top center;
+    }
+
+    /* margin note — its rule lands exactly on the unowned row */
+    [id="07-orphan-eyebrow"] {
+      position: absolute;
+      left: 130px;
+      top: 446px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #c2281d;
+    }
+    [id="07-orphan-noterule"] {
+      position: absolute;
+      left: 130px;
+      top: 490px;
+      width: 338px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+    [id="07-orphan-sub"] {
+      position: absolute;
+      left: 130px;
+      top: 505px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #5f5f68;
+    }
+
+    /* the quoted line — cartesian quote-mark, right margin */
+    [id="07-orphan-quote"] {
+      position: absolute;
+      left: 1490px;
+      top: 70px;
+      font-size: 9cqw;
+      font-weight: 400;
+      line-height: 1;
+      color: #e4e4e7;
+    }
+
+    /* the owner field — one panel, aligned to the expanded promise */
+    [id="07-orphan-panel"] {
+      position: absolute;
+      left: 1490px;
+      top: 500px;
+      width: 380px;
+      box-sizing: border-box;
+      padding: 30px 32px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid #e4e4e7;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    [id="07-orphan-ownerlabel"] {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #c2281d;
+    }
+    [id="07-orphan-ownerrule"] {
+      margin-top: 22px;
+      width: 100%;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+    [id="07-orphan-dash"] {
+      margin-top: 14px;
+      font-size: 6.2cqw;
+      font-weight: 400;
+      line-height: 1;
+      color: #18181b;
+    }
+    [id="07-orphan-nobody"] {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #5f5f68;
+    }
+    /* the one ink rule — terminal accent on the field */
+    [id="07-orphan-accent"] {
+      margin-top: 20px;
+      width: 180px;
+      height: 1px;
+      background: #18181b;
+      transform-origin: left center;
+    }
+  </style>
+
+  <div id="root" data-composition-id="07-orphan" data-width="1920" data-height="1080" data-duration="7.9">
+    <div id="07-orphan-ground" class="clip" data-start="0" data-duration="7.9" data-track-index="0"></div>
+
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <div id="07-orphan-overlay" class="clip" data-start="0" data-duration="7.9" data-track-index="1">
+      <!-- Scene 1 (0.0–3.5) — the quoted promise; margin chrome drafts in -->
+      <div id="07-orphan-vline"></div>
+      <div id="07-orphan-eyebrow">Nobody owns this</div>
+      <div id="07-orphan-noterule"></div>
+      <div id="07-orphan-sub">Vegan catering</div>
+      <div id="07-orphan-quote">&#8220;</div>
+
+      <!-- Scene 2 (3.5–5.7) — the promise expands; the owner field is the absence -->
+      <div id="07-orphan-panel">
+        <div id="07-orphan-ownerlabel">Owner</div>
+        <div id="07-orphan-ownerrule"></div>
+        <div id="07-orphan-dash">&#8212;</div>
+        <div id="07-orphan-nobody">No owner</div>
+        <div id="07-orphan-accent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+    function el(id) {
+      return document.getElementById(id);
+    }
+
+    // Scene 1 (0.0-3.5) — footage is the subject; margin note lands on the row
+    tl.fromTo(el("07-orphan-vline"), { scaleY: 0 }, { scaleY: 1, duration: 1.3, ease: "power2.out" }, 0.4);
+    tl.fromTo(el("07-orphan-eyebrow"), { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.65, ease: "power2.out" }, 0.6);
+    tl.fromTo(el("07-orphan-noterule"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.out" }, 1.05);
+    tl.fromTo(el("07-orphan-sub"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 1.55);
+    tl.fromTo(el("07-orphan-quote"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 2.2);
+
+    // Scene 2 (3.5-5.7) — one panel: the owner field, then the absence itself
+    tl.fromTo(el("07-orphan-panel"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 3.55);
+    tl.fromTo(el("07-orphan-ownerlabel"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 3.7);
+    tl.fromTo(el("07-orphan-ownerrule"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, 4.05);
+    tl.fromTo(el("07-orphan-dash"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 4.55);
+    tl.fromTo(el("07-orphan-nobody"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 5.05);
+    tl.fromTo(el("07-orphan-accent"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 5.15);
+
+    // Scene 3 (5.7-7.5) — dry hold; no motion. Full-span anchor only.
+    tl.to({}, { duration: 7.5 }, 0);
+
+    window.__timelines["07-orphan"] = tl;
+    tl.seek(0);
+  </script>
+</template>

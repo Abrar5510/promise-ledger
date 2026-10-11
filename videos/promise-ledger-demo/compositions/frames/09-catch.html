@@ -1,0 +1,169 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    /* Root: style by #root, never a class (lint: subcomposition_root_styled_by_class). */
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      color: #18181b;
+      font-family: Geist, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    /* Full-bleed ground — its own clip layer, never a background on #root.
+       Class selectors are written as attribute selectors so a digit-leading
+       frame prefix stays valid CSS. */
+    [class~="09-catch-ground"] {
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+    }
+
+    /* The recording is hoisted to the host root (full-bleed, undimmed) — the
+       overlay clip rides above it on its own stacking level. */
+    [class~="09-catch-overlay"] {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* drafting guide — 1px, ~5cqw from the left edge */
+    [class~="09-catch-guide"] {
+      position: absolute;
+      left: 96px;
+      top: 78px;
+      width: 1px;
+      height: 800px;
+      background: #e4e4e7;
+      opacity: 0.35;
+      transform-origin: top center;
+    }
+
+    /* frame mark, top-left */
+    [class~="09-catch-mark"] {
+      position: absolute;
+      left: 134px;
+      top: 88px;
+      width: 320px;
+    }
+    [class~="09-catch-eyebrow"] {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c2281d;
+    }
+    [class~="09-catch-eyerule"] {
+      margin-top: 16px;
+      width: 156px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+
+    /* hero — left column, centred in the content area (0.42 x height) */
+    [class~="09-catch-hero"] {
+      position: absolute;
+      left: 134px;
+      top: 356px;
+      width: 320px;
+      font-size: 92px;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      color: #18181b;
+    }
+
+    /* caught-state label, bracketed by hairlines */
+    [class~="09-catch-labrule"] {
+      position: absolute;
+      left: 134px;
+      top: 596px;
+      width: 180px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+    [class~="09-catch-label"] {
+      position: absolute;
+      left: 134px;
+      top: 620px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c2281d;
+    }
+
+    /* horizontal-accent — the one INK rule, terminal seal on the caught state */
+    [class~="09-catch-ink"] {
+      position: absolute;
+      left: 134px;
+      top: 686px;
+      width: 306px;
+      height: 1px;
+      background: #18181b;
+      transform-origin: left center;
+    }
+  </style>
+
+  <div id="root" data-composition-id="09-catch" data-width="1920" data-height="1080">
+    <div class="09-catch-ground clip" data-start="0" data-duration="6" data-track-index="0"></div>
+
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <div class="09-catch-overlay clip" data-start="0" data-duration="6" data-track-index="1">
+      <div class="09-catch-guide"></div>
+
+      <div class="09-catch-mark">
+        <div class="09-catch-eyebrow">The catch</div>
+        <div class="09-catch-eyerule"></div>
+      </div>
+
+      <div class="09-catch-hero">Found now</div>
+
+      <div class="09-catch-labrule"></div>
+      <div class="09-catch-label">New clash</div>
+      <div class="09-catch-ink"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    // Scene 1 (0.0–3.5s) — the mark forms as the ledger catches the clash
+    tl.fromTo('[class~="09-catch-guide"]', { scaleY: 0 }, { scaleY: 1, duration: 1, ease: "power2.out" }, 0.2);
+    tl.fromTo('[class~="09-catch-eyebrow"]', { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.3);
+    tl.fromTo('[class~="09-catch-hero"]', { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, 0.4);
+    tl.fromTo('[class~="09-catch-eyerule"]', { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, 0.6);
+    tl.fromTo('[class~="09-catch-labrule"]', { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, 2.1);
+    tl.fromTo('[class~="09-catch-label"]', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 2.75);
+
+    // Scene 2 (3.5–6.0s) — one terminal action, then the caught state holds
+    tl.fromTo('[class~="09-catch-ink"]', { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 4.05);
+
+    window.__timelines["09-catch"] = tl;
+    tl.seek(0);
+  </script>
+</template>

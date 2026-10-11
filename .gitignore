@@ -41,5 +41,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# HyperFrames demo-video project (renders, recordings, node_modules)
-videos/
+# HyperFrames demo-video project — ignore recreatable/heavy parts only
+videos/**/node_modules/
+videos/**/.venv-tts/
+videos/**/recordings/
+videos/**/.DS_Store
+# duplicate of renders/The-Promise-Ledger-demo.mp4
+videos/promise-ledger-demo/renders/video.mp4

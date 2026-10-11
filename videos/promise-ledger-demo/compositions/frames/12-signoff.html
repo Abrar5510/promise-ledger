@@ -1,0 +1,282 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      container-type: size;
+      font-family: Geist, system-ui, -apple-system, sans-serif;
+      color: #18181b;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    /* full-bleed ground — its own clip layer, never painted on #root */
+    [class~="12-signoff-ground"] {
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+      z-index: 0;
+    }
+
+    /* the recording is the subject: exact host box, undimmed, unblurred */
+    [class~="12-signoff-video"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      object-fit: cover;
+      background: #fafafa;
+      z-index: 1;
+    }
+
+    [class~="12-signoff-overlay"] {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* one compass-drafted ring (solid + dashed inner) behind the lockup */
+    [class~="12-signoff-ring"] {
+      position: absolute;
+      left: 610px;
+      top: 190px;
+      width: 700px;
+      height: 700px;
+      border: 1px solid rgba(24, 24, 27, 0.22);
+      border-radius: 50%;
+    }
+    [class~="12-signoff-ringdash"] {
+      position: absolute;
+      left: 77px;
+      top: 77px;
+      width: 546px;
+      height: 546px;
+      border: 1px dashed rgba(24, 24, 27, 0.18);
+      border-radius: 50%;
+    }
+
+    /* closing lockup — centered column, all of it above the caption keep-out */
+    [class~="12-signoff-lockup"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [class~="12-signoff-title"] {
+      font-size: 140px;
+      font-weight: 500;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      color: #18181b;
+      text-shadow:
+        0 0 22px rgba(250, 250, 250, 0.8),
+        0 0 8px rgba(250, 250, 250, 0.85);
+    }
+    [class~="12-signoff-w"] {
+      display: inline-block;
+    }
+
+    /* the universal hairline, drawn center-out between name and line */
+    [class~="12-signoff-hair"] {
+      width: 640px;
+      height: 1px;
+      margin: 46px 0;
+      background: rgba(24, 24, 27, 0.28);
+      transform-origin: center center;
+    }
+
+    [class~="12-signoff-tag"] {
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #5f5f68;
+      white-space: nowrap;
+      text-shadow: 0 0 16px rgba(250, 250, 250, 0.8);
+    }
+    [class~="12-signoff-tw"] {
+      display: inline-block;
+    }
+    [class~="12-signoff-yes"] {
+      position: relative;
+      color: #c2281d;
+    }
+    [class~="12-signoff-yesrule"] {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.14em;
+      height: 2px;
+      background: #c2281d;
+      transform-origin: left center;
+    }
+  </style>
+
+  <div id="root" data-composition-id="12-signoff" data-width="1920" data-height="1080">
+    <div
+      class="12-signoff-ground clip"
+      data-start="0"
+      data-duration="7"
+      data-track-index="0"
+    ></div>
+
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <div
+      class="12-signoff-overlay clip"
+      data-start="0"
+      data-duration="7"
+      data-track-index="1"
+    >
+      <div class="12-signoff-ring">
+        <div class="12-signoff-ringdash"></div>
+      </div>
+
+      <div class="12-signoff-lockup">
+        <div class="12-signoff-title">
+          <span class="12-signoff-w 12-signoff-w-the">The</span>
+          <span class="12-signoff-w 12-signoff-w-promise">Promise</span>
+          <span class="12-signoff-w 12-signoff-w-ledger">Ledger</span>
+        </div>
+
+        <div class="12-signoff-hair"></div>
+
+        <div class="12-signoff-tag">
+          <span class="12-signoff-tw 12-signoff-t-know">Know</span>
+          <span class="12-signoff-tw 12-signoff-t-what">what</span>
+          <span class="12-signoff-tw 12-signoff-t-youve">you've</span>
+          <span class="12-signoff-tw 12-signoff-t-said">said</span>
+          <span class="12-signoff-tw 12-signoff-t-yes">yes<span class="12-signoff-yesrule"></span></span>
+          <span class="12-signoff-tw 12-signoff-t-to">to.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    // Scene 1 (0.0-2.0) — full-bleed footage scrolls back to the ledger header.
+    // The recording is the hero and is visible from t=0; the compass ring starts
+    // drafting in as the name lands, leading the lockup onto its cue.
+    tl.fromTo(
+      '[class~="12-signoff-ring"]',
+      { opacity: 0, scale: 0.88 },
+      { opacity: 1, scale: 1, duration: 1.2, ease: "back.out(1.2)" },
+      1.5
+    );
+
+    // Scene 2 (2.0-4.5) — the closing lockup resolves: kinetic type seating beat
+    // by beat, each word with its own move (spring-pop / blur-in / masked slide).
+    tl.fromTo(
+      '[class~="12-signoff-w-the"]',
+      { opacity: 0, scale: 0.76, y: 16 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "back.out(1.8)" },
+      2.0
+    );
+    tl.fromTo(
+      '[class~="12-signoff-w-promise"]',
+      { opacity: 0, y: 10, filter: "blur(14px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "power3.out" },
+      2.3
+    );
+    tl.fromTo(
+      '[class~="12-signoff-w-ledger"]',
+      { opacity: 0, clipPath: "inset(100% 0% 0% 0%)" },
+      { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power3.out" },
+      2.6
+    );
+
+    // the hairline rule draws center-out under the name
+    tl.fromTo(
+      '[class~="12-signoff-hair"]',
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.8, ease: "power2.inOut" },
+      2.95
+    );
+
+    // the closing line builds word by word onto its spoken cue
+    tl.fromTo(
+      '[class~="12-signoff-t-know"]',
+      { opacity: 0, y: 12, filter: "blur(8px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" },
+      3.1
+    );
+    tl.fromTo(
+      '[class~="12-signoff-t-what"]',
+      { opacity: 0, y: 12, filter: "blur(8px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" },
+      3.2
+    );
+    tl.fromTo(
+      '[class~="12-signoff-t-youve"]',
+      { opacity: 0, y: 12, filter: "blur(8px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" },
+      3.3
+    );
+    tl.fromTo(
+      '[class~="12-signoff-t-said"]',
+      { opacity: 0, y: 12, filter: "blur(8px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" },
+      3.4
+    );
+
+    // the emphasised word spring-pops — the payoff beat of the blueprint
+    tl.fromTo(
+      '[class~="12-signoff-t-yes"]',
+      { opacity: 0, scale: 0.68 },
+      { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" },
+      3.52
+    );
+    tl.fromTo(
+      '[class~="12-signoff-t-to"]',
+      { opacity: 0, y: 12, filter: "blur(8px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.5, ease: "power2.out" },
+      3.7
+    );
+
+    // dashed inner ring resolves the compass; accent underline draws on "yes"
+    tl.fromTo(
+      '[class~="12-signoff-ringdash"]',
+      { opacity: 0, scale: 0.94 },
+      { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" },
+      3.4
+    );
+    tl.fromTo(
+      '[class~="12-signoff-yesrule"]',
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.55, ease: "power2.out" },
+      3.9
+    );
+
+    // Scene 3 (4.5-7.0) — hold: everything is seated by 4.45s and stays still.
+    window.__timelines["12-signoff"] = tl;
+    tl.seek(0);
+  </script>
+</template>

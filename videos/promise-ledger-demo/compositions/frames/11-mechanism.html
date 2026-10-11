@@ -1,0 +1,353 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* ---- full-frame clip layers (footage is the ground; these ride above it) ---- */
+    [id="11-mechanism-left"],
+    [id="11-mechanism-right"] {
+      position: absolute;
+      inset: 0;
+      z-index: 6;
+      font-family: Geist, sans-serif;
+      font-weight: 400;
+      color: #18181b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- compass ring (behind the rail, left gutter) ---- */
+    [id="11-mechanism-ring"] {
+      position: absolute;
+      left: 40px;
+      top: 540px;
+      width: 340px;
+      height: 340px;
+      border: 1px solid #e4e4e7;
+      border-radius: 50%;
+    }
+    [id="11-mechanism-ring-inner"] {
+      position: absolute;
+      left: 12%;
+      top: 12%;
+      width: 76%;
+      height: 76%;
+      border: 1px dashed #e4e4e7;
+      border-radius: 50%;
+    }
+
+    /* ---- left rail ---- */
+    [id="11-mechanism-rail"] {
+      position: absolute;
+      left: 72px;
+      top: 96px;
+      width: 370px;
+    }
+    [id="11-mechanism-eyebrow"] {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c2281d;
+    }
+    [id="11-mechanism-rule-top"],
+    [id="11-mechanism-rule01"],
+    [id="11-mechanism-rule02"] {
+      display: block;
+      width: 370px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+    [id="11-mechanism-rule-top"] {
+      margin-top: 20px;
+    }
+    [id="11-mechanism-rule01"] {
+      margin-top: 32px;
+    }
+    [id="11-mechanism-rule02"] {
+      margin-top: 32px;
+    }
+
+    [id="11-mechanism-row01"],
+    [id="11-mechanism-row02"] {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    [id="11-mechanism-num01"],
+    [id="11-mechanism-num02"] {
+      flex: 0 0 44px;
+      font-size: 34px;
+      line-height: 1.1;
+      color: #c2281d;
+    }
+    [id="11-mechanism-lab01"],
+    [id="11-mechanism-lab02"] {
+      font-size: 34px;
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: #18181b;
+    }
+    [id="11-mechanism-sub01"],
+    [id="11-mechanism-sub02"] {
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5f5f68;
+    }
+
+    /* ---- closing plate ---- */
+    [id="11-mechanism-stamp"] {
+      margin-top: 40px;
+    }
+    [id="11-mechanism-accent"] {
+      width: 345px;
+      height: 1px;
+      background: #18181b;
+      transform-origin: left center;
+    }
+    [id="11-mechanism-stamp-lab"] {
+      margin-top: 22px;
+      font-size: 42px;
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.6px;
+      color: #18181b;
+    }
+    [id="11-mechanism-stamp-sub"] {
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c2281d;
+    }
+
+    /* ---- right annotation, level with the staff filter row ---- */
+    [id="11-mechanism-note"] {
+      position: absolute;
+      left: 1490px;
+      top: 570px;
+      width: 330px;
+    }
+    [id="11-mechanism-note-lab"] {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c2281d;
+    }
+    [id="11-mechanism-note-rule"] {
+      display: block;
+      width: 220px;
+      height: 1px;
+      margin-top: 14px;
+      margin-left: -20px;
+      background: #e4e4e7;
+      transform-origin: right center;
+    }
+    [id="11-mechanism-note-sub1"],
+    [id="11-mechanism-note-sub2"] {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5f5f68;
+    }
+    [id="11-mechanism-note-sub1"] {
+      margin-top: 14px;
+    }
+    [id="11-mechanism-note-sub2"] {
+      margin-top: 12px;
+    }
+  </style>
+
+  <div id="root" data-composition-id="11-mechanism" data-width="1920" data-height="1080" data-duration="15.5">
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <!-- Scene 1 + 2 + 3 left rail -->
+    <div class="clip" id="11-mechanism-left" style="position: absolute; inset: 0; z-index: 6" data-start="0" data-duration="15.5" data-track-index="1">
+      <div id="11-mechanism-ring">
+        <div id="11-mechanism-ring-inner"></div>
+      </div>
+
+      <div id="11-mechanism-rail">
+        <div id="11-mechanism-eyebrow">Who does what</div>
+        <div id="11-mechanism-rule-top"></div>
+
+        <div id="11-mechanism-row01">
+          <div id="11-mechanism-num01">01</div>
+          <div>
+            <div id="11-mechanism-lab01">Reads + extracts</div>
+            <div id="11-mechanism-sub01">The model</div>
+          </div>
+        </div>
+        <div id="11-mechanism-rule01"></div>
+
+        <div id="11-mechanism-row02">
+          <div id="11-mechanism-num02">02</div>
+          <div>
+            <div id="11-mechanism-lab02">Counts + decides</div>
+            <div id="11-mechanism-sub02">Plain code</div>
+          </div>
+        </div>
+        <div id="11-mechanism-rule02"></div>
+
+        <div id="11-mechanism-stamp">
+          <div id="11-mechanism-accent"></div>
+          <div id="11-mechanism-stamp-lab">Structured data</div>
+          <div id="11-mechanism-stamp-sub">Not prose</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scene 2 annotation, level with the staff filter row in the footage -->
+    <div class="clip" id="11-mechanism-right" style="position: absolute; inset: 0; z-index: 6" data-start="0" data-duration="15.5" data-track-index="2">
+      <div id="11-mechanism-note">
+        <div id="11-mechanism-note-lab">Staff filter</div>
+        <div id="11-mechanism-note-rule"></div>
+        <div id="11-mechanism-note-sub1">Rows narrow</div>
+        <div id="11-mechanism-note-sub2">One staff</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines["11-mechanism"] = tl;
+
+      function el(id) {
+        return document.getElementById(id);
+      }
+
+    /* Scene 1 (0.0-5.0) — the table scrolls into view; the model only reads */
+    tl.fromTo(
+      el("11-mechanism-eyebrow"),
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+      0.3
+    );
+    tl.fromTo(
+      el("11-mechanism-rule-top"),
+      { opacity: 0, scaleX: 0 },
+      { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out" },
+      0.55
+    );
+    tl.fromTo(
+      el("11-mechanism-row01"),
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" },
+      1.7
+    );
+    tl.fromTo(
+      el("11-mechanism-sub01"),
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+      2.15
+    );
+    tl.fromTo(
+      el("11-mechanism-rule01"),
+      { opacity: 0, scaleX: 0 },
+      { opacity: 1, scaleX: 1, duration: 0.55, ease: "power2.out" },
+      2.65
+    );
+    tl.fromTo(
+      el("11-mechanism-ring"),
+      { opacity: 0, scale: 0.9 },
+      { opacity: 0.5, scale: 1, duration: 1.1, ease: "power2.out" },
+      3.45
+    );
+
+    /* Scene 2 (5.0-11.4) — the staff filter lands; plain code does the counting */
+    tl.fromTo(
+      el("11-mechanism-note-rule"),
+      { opacity: 0, scaleX: 0 },
+      { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out" },
+      5.15
+    );
+    tl.fromTo(
+      el("11-mechanism-note-lab"),
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+      5.4
+    );
+    tl.fromTo(
+      el("11-mechanism-row02"),
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" },
+      5.7
+    );
+    tl.fromTo(
+      el("11-mechanism-sub02"),
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+      6.3
+    );
+    tl.fromTo(
+      el("11-mechanism-rule02"),
+      { opacity: 0, scaleX: 0 },
+      { opacity: 1, scaleX: 1, duration: 0.55, ease: "power2.out" },
+      6.8
+    );
+    tl.fromTo(
+      el("11-mechanism-note-sub1"),
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+      7.4
+    );
+    tl.fromTo(
+      el("11-mechanism-note-sub2"),
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+      9.3
+    );
+
+    /* Scene 3 (11.4-15.0) — the filtered table holds */
+    tl.fromTo(
+      el("11-mechanism-accent"),
+      { opacity: 0, scaleX: 0 },
+      { opacity: 1, scaleX: 1, duration: 0.7, ease: "power2.out" },
+      11.9
+    );
+    tl.fromTo(
+      el("11-mechanism-stamp-lab"),
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" },
+      12.35
+    );
+    tl.fromTo(
+      el("11-mechanism-stamp-sub"),
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+      12.95
+    );
+
+    /* macro drift running under the whole shot */
+    tl.fromTo(el("11-mechanism-rail"), { y: 8 }, { y: -8, duration: 15, ease: "none" }, 0);
+    tl.fromTo(el("11-mechanism-ring-inner"), { rotation: -16 }, { rotation: 16, duration: 15, ease: "none" }, 0);
+
+    tl.seek(0);
+    })();
+  </script>
+</template>

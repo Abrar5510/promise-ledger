@@ -1,0 +1,170 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    /* Root — styled by #root (the scoper special-cases it). The frame's only
+       z-lift: the approved video is hoisted to the host root and paints after
+       this scene, so the designed layer rides above it without dimming it. */
+    #root {
+      position: absolute;
+      inset: 0;
+      container-type: size;
+      z-index: 5;
+      font-family: Geist, -apple-system, BlinkMacSystemFont, system-ui, ui-sans-serif, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    /* Scene 1 lockup — stone label, top-left margin (clear of the capture's content column) */
+    .f04-provenance-label {
+      position: absolute;
+      z-index: 5;
+      left: 7cqw;
+      top: 4cqw;
+    }
+    .f04-provenance-plate {
+      box-sizing: border-box;
+      background: #fafafa;
+      border: 0.07cqw solid #e4e4e7;
+      border-radius: 0;
+      padding: 1cqw 1.5cqw;
+      box-shadow: none;
+    }
+    .f04-provenance-eyebrow {
+      display: block;
+      font-size: 1.4cqw;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.28cqw;
+      text-transform: uppercase;
+      color: #c2281d;
+      white-space: nowrap;
+    }
+    /* the one ink horizontal-accent under the label */
+    .f04-provenance-ink {
+      display: block;
+      height: 0.07cqw;
+      margin-top: 0.6cqw;
+      background: #18181b;
+    }
+
+    /* Scene 2 lockup — receipt mark, top-right margin */
+    .f04-provenance-mark {
+      position: absolute;
+      z-index: 5;
+      right: 7cqw;
+      top: 4cqw;
+    }
+    .f04-provenance-chip {
+      box-sizing: border-box;
+      background: #fafafa;
+      border: 0.07cqw solid #e4e4e7;
+      border-radius: 0;
+      padding: 1cqw 1.5cqw;
+      box-shadow: none;
+    }
+    .f04-provenance-chipword {
+      display: block;
+      font-size: 1.4cqw;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.28cqw;
+      text-transform: uppercase;
+      color: #5f5f68;
+      white-space: nowrap;
+    }
+    /* the accent marker under the word — the verbatim-sentence echo */
+    .f04-provenance-underline {
+      display: block;
+      height: 0.07cqw;
+      margin-top: 0.6cqw;
+      background: #c2281d;
+    }
+  </style>
+
+  <div id="root" data-composition-id="04-provenance" data-width="1920" data-height="1080">
+    <!-- full-bleed ground / subject: the approved capture, undimmed -->
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <!-- Scene 1 — the catalogue label -->
+    <div class="clip" data-start="0" data-duration="9" data-track-index="1">
+      <div class="f04-provenance-label">
+        <div class="f04-provenance-plate">
+          <span class="f04-provenance-eyebrow">Provenance</span>
+        </div>
+        <div class="f04-provenance-ink"></div>
+      </div>
+    </div>
+
+    <!-- Scene 2/3 — the receipt mark -->
+    <div class="clip" data-start="0" data-duration="9" data-track-index="2">
+      <div class="f04-provenance-mark">
+        <div class="f04-provenance-chip">
+          <span class="f04-provenance-chipword">Verbatim</span>
+          <span class="f04-provenance-underline"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0.0–3.2s) — the label arrives on the first line of VO
+      tl.fromTo(
+        ".f04-provenance-plate",
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+        0.3
+      );
+      // …and the ink rule draws as the link is followed
+      tl.fromTo(
+        ".f04-provenance-ink",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.9, ease: "power3.out", transformOrigin: "left center" },
+        1.4
+      );
+
+      // Scene 2 (3.2–6.7s) — the receipt mark lands on "the exact sentence it came from"
+      tl.fromTo(
+        ".f04-provenance-chip",
+        { opacity: 0, x: 18 },
+        { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
+        3.2
+      );
+      tl.fromTo(
+        ".f04-provenance-underline",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.8, ease: "power2.out", transformOrigin: "left center" },
+        4.4
+      );
+
+      // Scene 3 (6.7–9.0s) — quiet settle, then stillness
+      tl.to(
+        ".f04-provenance-chip",
+        { borderColor: "#c2281d", duration: 0.8, ease: "power1.inOut" },
+        6.7
+      );
+
+      // full-span anchor so the sub-timeline spans the whole 9s clip
+      tl.to({}, { duration: 9 }, 0);
+
+      window.__timelines["04-provenance"] = tl;
+    })();
+  </script>
+</template>

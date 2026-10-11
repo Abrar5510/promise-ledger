@@ -1,0 +1,19 @@
+{
+  "note": "Deliberate post-sync pacing edit. audio.mjs sync-durations set each frame == its voice line (88.0s total), which is too fast to read the UI and far under the brief's 4m. Approved pacing: voice + reading holds -> 125.0s (2:05). Each frame = voice duration + a settled hold at the end of the beat (action runs at frame start, hold follows the spoken line). STORYBOARD.md durations, record.mjs and slice.mjs all read these numbers.",
+  "total_s": 125.0,
+  "voice_total_s": 88.0,
+  "frames": [
+    { "frame": 1, "duration_s": 17.5, "voice_s": 13.781 },
+    { "frame": 2, "duration_s": 10.0, "voice_s": 7.616 },
+    { "frame": 3, "duration_s": 12.5, "voice_s": 9.259 },
+    { "frame": 4, "duration_s": 9.0, "voice_s": 6.699 },
+    { "frame": 5, "duration_s": 11.0, "voice_s": 8.085 },
+    { "frame": 6, "duration_s": 11.0, "voice_s": 8.043 },
+    { "frame": 7, "duration_s": 7.5, "voice_s": 5.717 },
+    { "frame": 8, "duration_s": 10.5, "voice_s": 7.04 },
+    { "frame": 9, "duration_s": 6.0, "voice_s": 3.584 },
+    { "frame": 10, "duration_s": 8.0, "voice_s": 3.968 },
+    { "frame": 11, "duration_s": 15.0, "voice_s": 11.413 },
+    { "frame": 12, "duration_s": 7.0, "voice_s": 2.795 }
+  ]
+}

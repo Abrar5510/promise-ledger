@@ -1,0 +1,202 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    /*
+      02-reveal — the recording IS the reveal: assets/beat-02-reveal.mp4 mounted
+      full-bleed at 0,0 / 1920x1080, undimmed. The designed layer is a single
+      drafting rail in the left page margin: ink beside the summary line, then
+      alarm red down the six clashes, ticking one mark per row as the voice
+      lands "six of them can't all be kept". Nothing after 7.45s — Scene 3 holds.
+      Caption keep-out: every element sits above y = 896 (83% of 1080).
+    */
+
+    /* Root is styled by #root only — never a class (subcomposition_root_styled_by_class). */
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    /* Full-bleed ground on its own clip layer — never painted on #root. */
+    #f02-reveal-ground {
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+    }
+
+    /* Accent layer rides above the hoisted full-bleed recording (auto z-index). */
+    #f02-reveal-marks {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+    }
+
+    /* Scene 1 — ink rail beside the summary line (upper third). */
+    #f02-reveal-summary-rail {
+      position: absolute;
+      left: 446px;
+      top: 120px;
+      width: 3px;
+      height: 98px;
+      background: #18181b;
+    }
+
+    /* Scene 1 — the frame's one ink horizontal-accent, aligned to content edge. */
+    #f02-reveal-summary-rule {
+      position: absolute;
+      left: 473px;
+      top: 170px;
+      width: 345px;
+      height: 2px;
+      background: #18181b;
+    }
+
+    /* Scene 2 — alarm-red rail down the full height of the clash list. */
+    #f02-reveal-clash-rail {
+      position: absolute;
+      left: 446px;
+      top: 218px;
+      width: 3px;
+      height: 288px;
+      background: #c2281d;
+    }
+
+    /* Scene 2 — one tick per clash row, flush to the rail. */
+    .f02-reveal-tick {
+      position: absolute;
+      left: 404px;
+      width: 42px;
+      height: 2px;
+      background: #c2281d;
+    }
+
+    #f02-reveal-tick-1 { top: 242px; }
+    #f02-reveal-tick-2 { top: 290px; }
+    #f02-reveal-tick-3 { top: 338px; }
+    #f02-reveal-tick-4 { top: 386px; }
+    #f02-reveal-tick-5 { top: 434px; }
+    #f02-reveal-tick-6 { top: 482px; }
+  </style>
+
+  <div id="root" data-composition-id="02-reveal" data-width="1920" data-height="1080">
+    <!-- full-bleed ground (own clip layer) -->
+    <div
+      id="f02-reveal-ground"
+      class="clip"
+      data-start="0"
+      data-duration="10"
+      data-track-index="0"
+    ></div>
+
+    <!-- approved full-bleed recording — the frame's subject, never dimmed or offset -->
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <!-- designed layer: still, above the caption keep-out -->
+    <div
+      id="f02-reveal-marks"
+      class="clip"
+      data-start="0"
+      data-duration="10"
+      data-track-index="2"
+    >
+      <span id="f02-reveal-summary-rail"></span>
+      <span id="f02-reveal-summary-rule"></span>
+      <span id="f02-reveal-clash-rail"></span>
+      <span id="f02-reveal-tick-1" class="f02-reveal-tick"></span>
+      <span id="f02-reveal-tick-2" class="f02-reveal-tick"></span>
+      <span id="f02-reveal-tick-3" class="f02-reveal-tick"></span>
+      <span id="f02-reveal-tick-4" class="f02-reveal-tick"></span>
+      <span id="f02-reveal-tick-5" class="f02-reveal-tick"></span>
+      <span id="f02-reveal-tick-6" class="f02-reveal-tick"></span>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0.0-4.5s) — footage is full-bleed from t=0; the ink rail settles
+      // as the voice reaches "25 conversations".
+      tl.fromTo(
+        "#f02-reveal-summary-rail",
+        { scaleY: 0, transformOrigin: "50% 0%" },
+        { scaleY: 1, transformOrigin: "50% 0%", duration: 0.8, ease: "power2.out" },
+        0.7
+      );
+
+      // Scene 1 — the ink accent lands on "39 promises".
+      tl.fromTo(
+        "#f02-reveal-summary-rule",
+        { scaleX: 0, transformOrigin: "0% 50%" },
+        { scaleX: 1, transformOrigin: "0% 50%", duration: 0.55, ease: "power2.out" },
+        3.95
+      );
+
+      // Scene 2 (4.5-7.6s) — alarm red runs the clash list on
+      // "Six of them can't all be kept".
+      tl.fromTo(
+        "#f02-reveal-clash-rail",
+        { scaleY: 0, transformOrigin: "50% 0%" },
+        { scaleY: 1, transformOrigin: "50% 0%", duration: 1.3, ease: "power2.out" },
+        5.6
+      );
+
+      // Scene 2 — six ticks fill down the rows, one per clash.
+      tl.fromTo(
+        "#f02-reveal-tick-1",
+        { scaleX: 0, transformOrigin: "100% 50%" },
+        { scaleX: 1, transformOrigin: "100% 50%", duration: 0.3, ease: "power3.out" },
+        5.75
+      );
+      tl.fromTo(
+        "#f02-reveal-tick-2",
+        { scaleX: 0, transformOrigin: "100% 50%" },
+        { scaleX: 1, transformOrigin: "100% 50%", duration: 0.3, ease: "power3.out" },
+        6.03
+      );
+      tl.fromTo(
+        "#f02-reveal-tick-3",
+        { scaleX: 0, transformOrigin: "100% 50%" },
+        { scaleX: 1, transformOrigin: "100% 50%", duration: 0.3, ease: "power3.out" },
+        6.31
+      );
+      tl.fromTo(
+        "#f02-reveal-tick-4",
+        { scaleX: 0, transformOrigin: "100% 50%" },
+        { scaleX: 1, transformOrigin: "100% 50%", duration: 0.3, ease: "power3.out" },
+        6.59
+      );
+      tl.fromTo(
+        "#f02-reveal-tick-5",
+        { scaleX: 0, transformOrigin: "100% 50%" },
+        { scaleX: 1, transformOrigin: "100% 50%", duration: 0.3, ease: "power3.out" },
+        6.87
+      );
+      tl.fromTo(
+        "#f02-reveal-tick-6",
+        { scaleX: 0, transformOrigin: "100% 50%" },
+        { scaleX: 1, transformOrigin: "100% 50%", duration: 0.3, ease: "power3.out" },
+        7.15
+      );
+
+      // Scene 3 (7.6-10.0s) — hold: the settled view, no motion.
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["02-reveal"] = tl;
+    })();
+  </script>
+</template>

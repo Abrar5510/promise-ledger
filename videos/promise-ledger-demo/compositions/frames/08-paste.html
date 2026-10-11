@@ -1,0 +1,233 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    /* Root is styled by #root — never by a class on the composition element. */
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: Geist, sans-serif;
+      color: #18181b;
+    }
+  </style>
+
+  <div id="root" data-composition-id="08-paste" data-width="1920" data-height="1080">
+    <!-- track 0 · full-bleed ground + approved footage (hoisted to the host root at assembly) -->
+    <div
+      class="clip"
+      id="08-paste-ground"
+      data-start="0"
+      data-duration="10.5"
+      data-track-index="0"
+      style="position: absolute; inset: 0; background: #fafafa"
+    >
+      <!-- approved frame video hoisted by assemble-index -->
+    </div>
+
+    <!-- track 1 · stone margin + drafting guide -->
+    <div
+      class="clip"
+      id="08-paste-margin"
+      data-start="0"
+      data-duration="10.5"
+      data-track-index="1"
+      style="position: absolute; inset: 0; z-index: 5; pointer-events: none"
+    >
+      <div
+        id="08-paste-panel"
+        style="position: absolute; left: 0; top: 0; width: 452px; height: 898px; background: rgba(250, 250, 250, 0.94)"
+      ></div>
+      <div
+        id="08-paste-guide"
+        style="position: absolute; left: 452px; top: 0; width: 1px; height: 898px; background: rgba(24, 24, 27, 0.18); transform-origin: top center"
+      ></div>
+    </div>
+
+    <!-- track 2 · header: compass ring, eyebrow, headline, hairline -->
+    <div
+      class="clip"
+      id="08-paste-header"
+      data-start="0"
+      data-duration="10.5"
+      data-track-index="2"
+      style="position: absolute; inset: 0; z-index: 6; pointer-events: none"
+    >
+      <div
+        id="08-paste-ring"
+        style="position: absolute; left: 110px; top: -110px; width: 340px; height: 340px; border: 1px solid #e4e4e7; border-radius: 50%"
+      >
+        <div
+          id="08-paste-ring-inner"
+          style="position: absolute; inset: 40px; border: 1px dashed #e4e4e7; border-radius: 50%"
+        ></div>
+      </div>
+      <div
+        id="08-paste-eyebrow"
+        style="position: absolute; left: 92px; top: 66px; font-size: 18px; font-weight: 500; line-height: 1.2; letter-spacing: 3.6px; text-transform: uppercase; color: #c2281d; white-space: nowrap"
+      >Live extraction</div>
+      <div
+        id="08-paste-h1"
+        style="position: absolute; left: 92px; top: 104px; font-size: 64px; font-weight: 400; line-height: 1.06; letter-spacing: -1.4px; color: #18181b; white-space: nowrap"
+      >Watch it</div>
+      <div
+        id="08-paste-h2"
+        style="position: absolute; left: 92px; top: 172px; font-size: 64px; font-weight: 400; line-height: 1.06; letter-spacing: -1.4px; color: #18181b; white-space: nowrap"
+      >find one.</div>
+      <div
+        id="08-paste-headrule"
+        style="position: absolute; left: 92px; top: 272px; width: 336px; height: 1px; background: #e4e4e7; transform-origin: left center"
+      ></div>
+    </div>
+
+    <!-- track 3 · on-screen sequence rail -->
+    <div
+      class="clip"
+      id="08-paste-rail"
+      data-start="0"
+      data-duration="10.5"
+      data-track-index="3"
+      style="position: absolute; inset: 0; z-index: 7; pointer-events: none"
+    >
+      <div id="08-paste-step1" style="position: absolute; left: 92px; top: 306px; width: 336px; height: 44px">
+        <div id="08-paste-step1rule" style="position: absolute; left: 0; top: 0; width: 336px; height: 1px; background: #e4e4e7; transform-origin: left center"></div>
+        <div id="08-paste-step1row" style="position: absolute; left: 0; top: 16px; width: 336px; display: flex; align-items: baseline; gap: 14px">
+          <span style="font-size: 17px; font-weight: 500; letter-spacing: 2px; color: #c2281d">01</span>
+          <span style="font-size: 20px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #18181b; white-space: nowrap">Add a conversation</span>
+        </div>
+      </div>
+      <div id="08-paste-step2" style="position: absolute; left: 92px; top: 380px; width: 336px; height: 44px">
+        <div id="08-paste-step2rule" style="position: absolute; left: 0; top: 0; width: 336px; height: 1px; background: #e4e4e7; transform-origin: left center"></div>
+        <div id="08-paste-step2row" style="position: absolute; left: 0; top: 16px; width: 336px; display: flex; align-items: baseline; gap: 14px">
+          <span style="font-size: 17px; font-weight: 500; letter-spacing: 2px; color: #c2281d">02</span>
+          <span style="font-size: 20px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #18181b; white-space: nowrap">Use an example</span>
+        </div>
+      </div>
+      <div id="08-paste-step3" style="position: absolute; left: 92px; top: 454px; width: 336px; height: 44px">
+        <div id="08-paste-step3rule" style="position: absolute; left: 0; top: 0; width: 336px; height: 1px; background: #e4e4e7; transform-origin: left center"></div>
+        <div id="08-paste-step3row" style="position: absolute; left: 0; top: 16px; width: 336px; display: flex; align-items: baseline; gap: 14px">
+          <span style="font-size: 17px; font-weight: 500; letter-spacing: 2px; color: #c2281d">03</span>
+          <span style="font-size: 20px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #18181b; white-space: nowrap">Read it</span>
+        </div>
+      </div>
+      <div id="08-paste-step4" style="position: absolute; left: 92px; top: 528px; width: 336px; height: 44px">
+        <div id="08-paste-step4rule" style="position: absolute; left: 0; top: 0; width: 336px; height: 1px; background: #e4e4e7; transform-origin: left center"></div>
+        <div id="08-paste-step4row" style="position: absolute; left: 0; top: 16px; width: 336px; display: flex; align-items: baseline; gap: 14px">
+          <span style="font-size: 17px; font-weight: 500; letter-spacing: 2px; color: #c2281d">04</span>
+          <span style="font-size: 20px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #18181b; white-space: nowrap">Extraction lands</span>
+        </div>
+      </div>
+      <div
+        id="08-paste-cursor"
+        style="position: absolute; left: 74px; top: 322px; width: 4px; height: 24px; background: #c2281d"
+      ></div>
+    </div>
+
+    <!-- track 4 · return-state cards -->
+    <div
+      class="clip"
+      id="08-paste-cards"
+      data-start="0"
+      data-duration="10.5"
+      data-track-index="4"
+      style="position: absolute; inset: 0; z-index: 8; pointer-events: none"
+    >
+      <div
+        id="08-paste-cardA"
+        style="position: absolute; left: 92px; top: 596px; width: 336px; box-sizing: border-box; padding: 18px 20px; background: rgba(255, 255, 255, 0.6); border: 1px solid #e4e4e7"
+      >
+        <div id="08-paste-cardAlab" style="font-size: 14px; font-weight: 500; line-height: 1.2; letter-spacing: 2.6px; text-transform: uppercase; color: #c2281d">Extraction</div>
+        <div id="08-paste-cardAval" style="font-size: 34px; font-weight: 400; line-height: 1.1; letter-spacing: 0.2px; color: #18181b; margin-top: 8px">Resolved</div>
+      </div>
+      <div
+        id="08-paste-cardB"
+        style="position: absolute; left: 92px; top: 714px; width: 336px; box-sizing: border-box; padding: 18px 20px; background: rgba(255, 255, 255, 0.6); border: 1px solid #e4e4e7"
+      >
+        <div id="08-paste-cardBlab" style="font-size: 14px; font-weight: 500; line-height: 1.2; letter-spacing: 2.6px; text-transform: uppercase; color: #c2281d">Ledger</div>
+        <div id="08-paste-cardBval" style="font-size: 34px; font-weight: 400; line-height: 1.1; letter-spacing: 0.2px; color: #18181b; margin-top: 8px">Updated</div>
+      </div>
+    </div>
+
+    <!-- track 5 · terminal stamp -->
+    <div
+      class="clip"
+      id="08-paste-stamp"
+      data-start="0"
+      data-duration="10.5"
+      data-track-index="5"
+      style="position: absolute; inset: 0; z-index: 9; pointer-events: none"
+    >
+      <div
+        id="08-paste-stamprule"
+        style="position: absolute; left: 92px; top: 842px; width: 170px; height: 2px; background: #18181b; transform-origin: left center"
+      ></div>
+      <div
+        id="08-paste-stampmicro"
+        style="position: absolute; left: 92px; top: 854px; font-size: 15px; font-weight: 500; line-height: 1.2; letter-spacing: 3px; text-transform: uppercase; color: #c2281d; white-space: nowrap"
+      >Checked on arrival</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var el = function (id) {
+        return document.getElementById(id);
+      };
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // ---- Scene 1 (0.0–3.0s) — "Add a conversation" opens, "Use an example" loads the email
+      tl.fromTo(el("08-paste-panel"), { opacity: 0, xPercent: -100 }, { opacity: 1, xPercent: 0, duration: 0.7, ease: "power3.out" }, 0.1);
+      tl.fromTo(el("08-paste-eyebrow"), { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.35);
+      tl.fromTo(el("08-paste-h1"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.6);
+      tl.fromTo(el("08-paste-h2"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.9);
+      tl.fromTo(el("08-paste-headrule"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, 1.15);
+      tl.fromTo(el("08-paste-guide"), { scaleY: 0 }, { scaleY: 1, duration: 1.0, ease: "power2.inOut" }, 1.35);
+      tl.fromTo(el("08-paste-step1rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 1.9);
+      tl.fromTo(el("08-paste-step1row"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 1.95);
+      tl.fromTo(el("08-paste-step2rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 2.6);
+      tl.fromTo(el("08-paste-step2row"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 2.65);
+      tl.fromTo(el("08-paste-ring"), { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }, 2.2);
+      tl.fromTo(el("08-paste-cursor"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 1.95);
+      tl.to(el("08-paste-cursor"), { y: 74, duration: 0.5, ease: "power2.inOut" }, 2.7);
+
+      // ---- Scene 2 (3.0–6.5s) — "Read it" fires, the extraction resolves (reveal weighted to the back)
+      tl.fromTo(el("08-paste-step3rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 3.35);
+      tl.fromTo(el("08-paste-step3row"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 3.4);
+      tl.to(el("08-paste-cursor"), { y: 148, duration: 0.5, ease: "power2.inOut" }, 3.45);
+      tl.fromTo(el("08-paste-cardA"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.3);
+      tl.fromTo(el("08-paste-cardAlab"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 5.7);
+      tl.fromTo(el("08-paste-cardAval"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 5.85);
+
+      // ---- Scene 3 (6.5–10.5s) — the extraction lands, the modal closes onto the updated ledger, hold
+      tl.fromTo(el("08-paste-step4rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 6.95);
+      tl.fromTo(el("08-paste-step4row"), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 7.0);
+      tl.to(el("08-paste-cursor"), { y: 222, duration: 0.5, ease: "power2.inOut" }, 7.05);
+      tl.fromTo(el("08-paste-cardB"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 7.45);
+      tl.fromTo(el("08-paste-cardBlab"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 7.85);
+      tl.fromTo(el("08-paste-cardBval"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 8.0);
+      tl.fromTo(el("08-paste-stamprule"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, 8.4);
+      tl.fromTo(el("08-paste-stampmicro"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 8.75);
+
+      // full-span anchor so the sub-comp timeline spans the whole frame
+      tl.to({}, { duration: 10.5 }, 0);
+      window.__timelines["08-paste"] = tl;
+    })();
+  </script>
+</template>

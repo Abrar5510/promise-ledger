@@ -1,0 +1,224 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      container-type: size;
+      font-family: Geist, -apple-system, system-ui, sans-serif;
+      color: #18181b;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    /* full-bleed ground — its own clip layer, never painted on #root */
+    [class~="10-draft-ground"] {
+      position: absolute;
+      inset: 0;
+      background: #fafafa;
+    }
+
+    /* the recording is the subject: exact host box, undimmed */
+    [class~="10-draft-video"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      object-fit: cover;
+      background: #fafafa;
+    }
+
+    [class~="10-draft-overlay"],
+    [class~="10-draft-herocover"] {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* one compass ring, drafting through the left margin */
+    [class~="10-draft-ring"] {
+      position: absolute;
+      left: -330px;
+      top: 140px;
+      width: 560px;
+      height: 560px;
+      border: 1px solid #e4e4e7;
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    [class~="10-draft-ringdash"] {
+      position: absolute;
+      inset: 34px;
+      border: 1px dashed #e4e4e7;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    /* top-left frame mark */
+    [class~="10-draft-eyebrow"] {
+      position: absolute;
+      left: 134px;
+      top: 78px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #c2281d;
+    }
+    [class~="10-draft-markrule"] {
+      position: absolute;
+      left: 134px;
+      top: 106px;
+      width: 182px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+
+    /* drafting guide + the margin rule that writes as the email drafts */
+    [class~="10-draft-vline"] {
+      position: absolute;
+      left: 96px;
+      top: 140px;
+      width: 1px;
+      height: 700px;
+      background: #e4e4e7;
+      opacity: 0.35;
+      transform-origin: top center;
+    }
+    [class~="10-draft-vfill"] {
+      position: absolute;
+      left: 96px;
+      top: 140px;
+      width: 1px;
+      height: 700px;
+      background: #c2281d;
+      transform-origin: top center;
+    }
+
+    /* hero block — the safety line, left margin, clears the draft panel */
+    [class~="10-draft-heroblock"] {
+      position: absolute;
+      left: 134px;
+      top: 520px;
+      width: 320px;
+    }
+    [class~="10-draft-herolabel"] {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: #c2281d;
+    }
+    [class~="10-draft-herotop"] {
+      margin-top: 14px;
+      width: 320px;
+      height: 1px;
+      background: #e4e4e7;
+      transform-origin: left center;
+    }
+    [class~="10-draft-heroline"] {
+      font-size: 3.2cqw;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      color: #18181b;
+    }
+    [class~="10-draft-herotop"] + [class~="10-draft-heroline"] {
+      margin-top: 22px;
+    }
+    [class~="10-draft-ink"] {
+      margin-top: 26px;
+      width: 320px;
+      height: 1px;
+      background: #18181b;
+      transform-origin: left center;
+    }
+    [class~="10-draft-heromicro"] {
+      margin-top: 16px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: #5f5f68;
+    }
+  </style>
+
+  <div id="root" data-composition-id="10-draft" data-width="1920" data-height="1080">
+    <div class="10-draft-ground clip" data-start="0" data-duration="8" data-track-index="0"></div>
+
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <div class="10-draft-overlay clip" data-start="0" data-duration="8" data-track-index="1">
+      <div class="10-draft-ring"><div class="10-draft-ringdash"></div></div>
+
+      <div class="10-draft-eyebrow">Draft a fix</div>
+      <div class="10-draft-markrule"></div>
+
+      <div class="10-draft-vline"></div>
+      <div class="10-draft-vfill"></div>
+    </div>
+
+    <div class="10-draft-herocover clip" data-start="0" data-duration="8" data-track-index="2">
+      <div class="10-draft-heroblock">
+        <div class="10-draft-herolabel">Review before sending</div>
+        <div class="10-draft-herotop"></div>
+        <div class="10-draft-heroline">Nothing</div>
+        <div class="10-draft-heroline">has been</div>
+        <div class="10-draft-heroline">sent</div>
+        <div class="10-draft-ink"></div>
+        <div class="10-draft-heromicro">Pending approval</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    function sel(name) {
+      return Array.prototype.slice.call(
+        document.querySelectorAll('[class~="' + name + '"]')
+      );
+    }
+
+    // Scene 1 (0.0–4.0) — full-bleed footage; "Draft a fix" pressed, the fixing
+    // email writes into the panel; the margin rule writes with it
+    tl.fromTo(sel("10-draft-eyebrow"), { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.2);
+    tl.fromTo(sel("10-draft-markrule"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, 0.55);
+    tl.fromTo(sel("10-draft-ring"), { opacity: 0, scale: 0.94 }, { opacity: 0.4, scale: 1, duration: 1.4, ease: "power2.out" }, 0.9);
+    tl.fromTo(sel("10-draft-vline"), { scaleY: 0 }, { scaleY: 1, duration: 1.2, ease: "power2.out" }, 1.1);
+    tl.fromTo(sel("10-draft-vfill"), { scaleY: 0 }, { scaleY: 1, duration: 2.3, ease: "none" }, 1.6);
+
+    // Scene 2 (4.0–6.0) — the draft settles complete; the safety line lands
+    tl.fromTo(sel("10-draft-herolabel"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 4.15);
+    tl.fromTo(sel("10-draft-herotop"), { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power3.out" }, 4.35);
+    tl.fromTo(sel("10-draft-heroline"), { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", stagger: 0.14 }, 4.6);
+    tl.fromTo(sel("10-draft-ink"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, 5.5);
+
+    // Scene 3 (6.0–8.0) — hold the completed draft; one quiet arrival, then still
+    tl.fromTo(sel("10-draft-heromicro"), { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 6.5);
+
+    window.__timelines["10-draft"] = tl;
+    tl.seek(0);
+  </script>
+</template>

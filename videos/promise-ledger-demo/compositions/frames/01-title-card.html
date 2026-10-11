@@ -1,0 +1,341 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Geist";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Geist Mono";
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: block;
+      src: url("assets/fonts/geist-mono-latin.woff2") format("woff2");
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       01-title-card — paper-white typographic card (Cartesian frame)
+       Root is styled by #root only; no ground is painted here — the
+       paper lives on its own full-bleed clip layer below.
+       ───────────────────────────────────────────────────────────── */
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      container-type: size;
+      font-family: Geist, "Inter", ui-sans-serif, system-ui, sans-serif;
+      font-weight: 400;
+      color: #18181b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #root .clip {
+      position: absolute;
+    }
+
+    /* ── ground: paper (bg-primary) — full bleed, its own clip layer ── */
+    #root .title-card-ground {
+      inset: 0;
+      background: #fafafa;
+    }
+
+    /* ── geo-ring: one compass construction ring, right, bleeding off-edge ── */
+    #root .title-card-ring {
+      left: 66.9cqw;
+      top: 19.7cqh;
+      width: 34cqw;
+      height: 34cqw;
+      border: 1px solid #e4e4e7;
+      border-radius: 50%;
+      opacity: 0.34;
+    }
+    #root .title-card-ring-inner {
+      position: absolute;
+      inset: 14%;
+      border: 1px dashed #e4e4e7;
+      border-radius: 50%;
+    }
+
+    /* ── display wordmark: centered, ink, sentence case ── */
+    #root .title-card-wordmark {
+      left: 0;
+      right: 0;
+      top: 23cqh;
+      text-align: center;
+      font-size: 7.8cqw;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      color: #18181b;
+    }
+
+    /* ── the ledger's hairline rule (universal 1px taupe separator) ── */
+    #root .title-card-rule {
+      left: 11cqw;
+      top: 44cqh;
+      width: 78cqw;
+      height: 1px;
+      background: #e4e4e7;
+    }
+
+    /* ── stakes cluster: asymmetric 60/40 — three ledger entries, left ── */
+    #root .title-card-clause {
+      top: 55cqh;
+    }
+    #root [id="01-title-card-clause-1"] {
+      left: 7cqw;
+      width: 15.15cqw;
+    }
+    #root [id="01-title-card-clause-2"] {
+      left: 25.15cqw;
+      width: 15.15cqw;
+    }
+    #root [id="01-title-card-clause-3"] {
+      left: 43.3cqw;
+      width: 19.7cqw;
+    }
+    #root .title-card-cell-num {
+      display: block;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: #c2281d;
+    }
+    #root .title-card-cell-rule {
+      display: block;
+      height: 1px;
+      margin-top: 12px;
+      background: #e4e4e7;
+    }
+    #root .title-card-cell-text {
+      display: block;
+      margin-top: 20px;
+      font-size: 2.2cqw;
+      line-height: 1.35;
+      color: #18181b;
+    }
+
+    /* ── Scene 3: the horizontal-accent ink rule + the single accent line ── */
+    #root .title-card-accent {
+      left: 7cqw;
+      top: 71.5cqh;
+      width: 80cqw;
+    }
+    #root .title-card-accent-rule {
+      display: block;
+      width: 18cqw;
+      height: 1px;
+      background: #18181b;
+    }
+    #root .title-card-accent-line {
+      display: block;
+      margin-top: 1.5cqw;
+      font-size: 2.8cqw;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: #18181b;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="01-title-card"
+    data-width="1920"
+    data-height="1080" data-duration="18"
+  >
+    <!-- track 0 — paper ground (full bleed) -->
+    <div
+      class="clip title-card-ground"
+      id="01-title-card-ground"
+      data-start="0"
+      data-duration="18"
+      data-track-index="0"
+    ></div>
+
+    <!-- track 1 — compass ring atmosphere -->
+    <div
+      class="clip title-card-ring"
+      id="01-title-card-ring"
+      data-start="0"
+      data-duration="18"
+      data-track-index="1"
+    >
+      <span class="title-card-ring-inner"></span>
+    </div>
+
+    <!-- track 2 — Scene 1: the name -->
+    <div
+      class="clip title-card-wordmark"
+      id="01-title-card-wordmark"
+      data-start="0"
+      data-duration="18"
+      data-track-index="2"
+    >
+      The Promise Ledger
+    </div>
+
+    <!-- track 3 — Scene 1: the ledger hairline -->
+    <div
+      class="clip title-card-rule"
+      id="01-title-card-rule"
+      data-start="0"
+      data-duration="18"
+      data-track-index="3"
+    ></div>
+
+    <!-- track 4 — Scene 2: stakes, clause one -->
+    <div
+      class="clip title-card-clause"
+      id="01-title-card-clause-1"
+      data-start="5.3"
+      data-duration="12.7"
+      data-track-index="4"
+    >
+      <span class="title-card-cell-num">01</span>
+      <span
+        class="title-card-cell-rule"
+        id="01-title-card-clause-1-rule"
+      ></span>
+      <span class="title-card-cell-text">five people</span>
+    </div>
+
+    <!-- track 5 — Scene 2: stakes, clause two -->
+    <div
+      class="clip title-card-clause"
+      id="01-title-card-clause-2"
+      data-start="7.5"
+      data-duration="10.5"
+      data-track-index="5"
+    >
+      <span class="title-card-cell-num">02</span>
+      <span
+        class="title-card-cell-rule"
+        id="01-title-card-clause-2-rule"
+      ></span>
+      <span class="title-card-cell-text">15,000 a day</span>
+    </div>
+
+    <!-- track 6 — Scene 2: stakes, clause three -->
+    <div
+      class="clip title-card-clause"
+      id="01-title-card-clause-3"
+      data-start="9.7"
+      data-duration="8.3"
+      data-track-index="6"
+    >
+      <span class="title-card-cell-num">03</span>
+      <span
+        class="title-card-cell-rule"
+        id="01-title-card-clause-3-rule"
+      ></span>
+      <span class="title-card-cell-text">ten weeks of yes</span>
+    </div>
+
+    <!-- track 7 — Scene 3: the accent line, then the hold -->
+    <div
+      class="clip title-card-accent"
+      id="01-title-card-accent"
+      data-start="12.2"
+      data-duration="5.8"
+      data-track-index="7"
+    >
+      <span
+        class="title-card-accent-rule"
+        id="01-title-card-accent-rule"
+      ></span>
+      <span class="title-card-accent-line" id="01-title-card-accent-line"
+        >Nobody writes those promises down in one place.</span
+      >
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var byId = function (id) {
+        return document.getElementById(id);
+      };
+      var tl = gsap.timeline({ paused: true });
+
+      /* Scene 1 (0.0–5.0s) — paper, the name, the ledger's hairline rule */
+      tl.fromTo(
+        byId("01-title-card-wordmark"),
+        { opacity: 0, y: 30, scale: 0.96 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "power3.out" },
+        0.15
+      );
+
+      tl.fromTo(
+        byId("01-title-card-ring"),
+        { opacity: 0, scale: 0.94 },
+        { opacity: 0.34, scale: 1, duration: 1.8, ease: "power3.out" },
+        0.55
+      );
+
+      /* long-tail power3 sweep, centred beneath the wordmark */
+      tl.fromTo(
+        byId("01-title-card-rule"),
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          duration: 2.2,
+          ease: "power3.out",
+          transformOrigin: "50% 50%",
+        },
+        1.25
+      );
+
+      /* Scene 2 (5.0–11.5s) — the stakes line, clause by clause */
+      var stakes = [
+        { t: 5.3, id: "01-title-card-clause-1" },
+        { t: 7.5, id: "01-title-card-clause-2" },
+        { t: 9.7, id: "01-title-card-clause-3" },
+      ];
+      for (var i = 0; i < stakes.length; i++) {
+        tl.fromTo(
+          byId(stakes[i].id),
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+          stakes[i].t
+        );
+        tl.fromTo(
+          byId(stakes[i].id + "-rule"),
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            duration: 0.6,
+            ease: "power3.out",
+            transformOrigin: "0% 50%",
+          },
+          stakes[i].t
+        );
+      }
+
+      /* Scene 3 (11.5–17.5s) — the accent line resolves, then the card sits still */
+      tl.fromTo(
+        byId("01-title-card-accent-rule"),
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          transformOrigin: "0% 50%",
+        },
+        12.2
+      );
+      tl.fromTo(
+        byId("01-title-card-accent-line"),
+        { opacity: 0, y: 22 },
+        { opacity: 1, y: 0, duration: 0.95, ease: "power3.out" },
+        12.5
+      );
+
+      window.__timelines["01-title-card"] = tl;
+      tl.seek(0);
+    })();
+  </script>
+</template>

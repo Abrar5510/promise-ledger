@@ -1,0 +1,209 @@
+[h1] The Promise Ledger
+[p] Riverside
+[p] Fri 11 Dec
+[p] Sun 13 Dec
+[p] . Everything Fieldday has said yes to.
+[button] Add a conversation
+[p] promises found in
+[p] emails, call notes and contracts.
+[span] 6 can't all be kept.
+[h2] Clashes
+[span] Crew parking passes: 41 promised, 30 exist
+[span] promises
+[span] people
+[span] 32A outlets, vendor row: 14 promised, 12 exist
+[span] promises
+[span] people
+[span] Stage B green room double-booked Sat 12 Dec: Marlo Vance and Halfmoon Parade
+[span] promises
+[span] people
+[span] Gate 2 load-in bay double-booked Thu 10 Dec: Smoky Joe's BBQ and Tap & Barrel
+[span] promises
+[span] people
+[span] Kiri & the Tide told two different things. Set length: 60 and 75 minutes
+[span] promises
+[span] people
+[span] Nobody owns this: Vegan catering for crew for all 3 days
+[span] promise
+[span] person
+[h2] Promised against what exists
+[span] Crew parking passes
+[span] 32A outlets, vendor row
+[span] Site buggies
+[span] , busiest day
+[span] Sat 12 Dec
+[span] Guest list spots
+[span] , busiest day
+[span] Sat 12 Dec
+[span] Ice
+[span] , busiest day
+[span] Sat 12 Dec
+[span] 110
+[span] 200
+[h2] Every promise
+[button] Everyone
+[button] Sam
+[button] Priya
+[button] Dan
+[button] Mei
+[th] Promised to
+[th] What
+[span] Source
+[td] The Lantern Club
+[td] 6 crew parking passes for the weekend
+[td] Sam Okafor
+[button] See where
+[td] The Lantern Club
+[td] 10 guest list spots for Saturday
+[td] Sam Okafor
+[button] See where
+[td] Marlo Vance
+[td] 4 parking passes
+[td] Priya Nair
+[button] See where
+[td] Marlo Vance
+[td] Stage B green room Saturday 5:30pm to 7pm
+[td] Priya Nair
+[button] See where
+[td] Marlo Vance
+[td] 6 guest list spots on Saturday
+[td] Priya Nair
+[button] See where
+[td] Kiri & the Tide
+[td] 5 parking passes
+[td] Priya Nair
+[button] See where
+[td] Kiri & the Tide
+[td] 75 minute set on Sunday
+[td] Priya Nair
+[button] See where
+[td] Kiri & the Tide
+[td] 8 guest list spots for Sunday
+[td] Priya Nair
+[button] See where
+[td] Kiri & the Tide
+[td] 60 minute set slot
+[td] Sam Okafor
+[button] See where
+[td] Smoky Joe's BBQ
+[td] 3 parking passes
+[td] Dan Whitlock
+[button] See where
+[td] Smoky Joe's BBQ
+[td] 2 32A outlets on vendor row
+[td] Dan Whitlock
+[button] See where
+[td] Smoky Joe's BBQ
+[td] Gate 2 load-in Thursday 7:30am to 8:30am
+[td] Dan Whitlock
+[button] See where
+[td] Smoky Joe's BBQ
+[td] 30 bags of ice on Saturday
+[td] Dan Whitlock
+[button] See where
+[td] The Fry Guys
+[td] 2 parking passes
+[td] Dan Whitlock
+[button] See where
+[td] The Fry Guys
+[td] 2 32A outlets
+[td] Dan Whitlock
+[button] See where
+[td] Tap & Barrel
+[td] 4 parking passes
+[td] Mei Tanaka
+[button] See where
+[td] Tap & Barrel
+[td] Gate 2 load-in Thursday 7am to 8am
+[td] Mei Tanaka
+[button] See where
+[td] Tap & Barrel
+[td] 2 32A outlets for glycol chillers
+[td] Dan Whitlock
+[button] See where
+[td] Tap & Barrel
+[td] 60 bags of ice each day
+[td] Dan Whitlock
+[button] See where
+[td] Woodfire Collective
+[td] 3 parking passes
+[td] Mei Tanaka
+[button] See where
+[td] Woodfire Collective
+[td] Gate 2 load-in Thursday 9am to 10am
+[td] Mei Tanaka
+[button] See where
+[td] Woodfire Collective
+[td] 2 32A outlets
+[td] Dan Whitlock
+[button] See where
+[td] Halfmoon Parade
+[td] 5 parking passes
+[td] Sam Okafor
+[button] See where
+[td] Halfmoon Parade
+[td] Stage B green room Saturday 6pm to 7:30pm
+[td] Sam Okafor
+[button] See where
+[td] Halfmoon Parade
+[td] 8 guest list spots on Saturday
+[td] Sam Okafor
+[button] See where
+[td] DJ Ostara
+[td] 3 parking passes
+[td] Jo Barrett
+[button] See where
+[td] Saltbush Choir
+[td] 6 parking passes
+[td] Priya Nair
+[button] See where
+[td] Saltbush Choir
+[td] 2 buggies on Saturday
+[td] Mei Tanaka
+[button] See where
+[td] The Lantern Club
+[td] 1 buggy on Saturday
+[td] Priya Nair
+[button] See where
+[td] Marlo Vance
+[td] 1 buggy on Saturday
+[td] Priya Nair
+[button] See where
+[td] The Lantern Club
+[td] Vegan catering for crew for all 3 days
+[td] Jo Barrett
+[button] See where
+[td] Bao Down
+[td] 1 32A outlet
+[td] Dan Whitlock
+[button] See where
+[td] Bao Down
+[td] Parking pass check
+[span] (not counted)
+[td] Dan Whitlock
+[button] See where
+[td] Dumpling Sisters
+[td] 1 32A outlet
+[td] Dan Whitlock
+[button] See where
+[td] Riverbend Coffee
+[td] 1 32A outlet for Riverbend Coffee
+[td] Mei Tanaka
+[button] See where
+[td] Churro Cart
+[td] 1 32A outlet for Churro Cart
+[td] Mei Tanaka
+[button] See where
+[td] Gelato Nonna
+[td] 2 32A outlets
+[td] Sam Okafor
+[button] See where
+[td] Gelato Nonna
+[td] 20 bags of ice on Saturday
+[td] Sam Okafor
+[button] See where
+[td] DJ Ostara
+[td] Stage B green room after 9pm Saturday
+[span] (not counted)
+[td] Priya Nair
+[button] See where
